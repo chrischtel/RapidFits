@@ -12,9 +12,12 @@
   "app": {
     "windows": [
       {
-        "title": "rapidfits",
-        "width": 800,
-        "height": 600
+        "label": "main",
+        "title": "RapidFits",
+        "width": 1200,
+        "height": 800,
+        "transparent": true,
+        "decorations": true
       }
     ],
     "security": {

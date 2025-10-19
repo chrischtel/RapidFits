@@ -1,0 +1,14 @@
+{
+  "tasks": {
+    "dev": "vite",
+    "build": "vite build",
+    "tauri": "tauri"
+  },
+  "imports": {},
+  "exclude": [
+    "node_modules",
+    "dist",
+    "target",
+    "src-tauri"
+  ]
+}

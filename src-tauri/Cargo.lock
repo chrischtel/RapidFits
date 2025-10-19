@@ -3291,6 +3291,7 @@ dependencies = [
  "bytemuck",
  "fitsio",
  "ndarray",
+ "parking_lot",
  "pollster",
  "serde",
  "serde_json",

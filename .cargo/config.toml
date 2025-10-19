@@ -1,0 +1,9 @@
+[target.x86_64-pc-windows-msvc]
+# Add the vcpkg DLL directories to the runtime library search path
+rustflags = [
+    "-C", "link-arg=/LIBPATH:src-tauri/vcpkg_installed/x64-windows/lib",
+]
+
+[env]
+# This won't work for runtime DLL loading, but documents the requirement
+# Users need to ensure the DLLs are in PATH or next to the executable

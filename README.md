@@ -51,6 +51,19 @@ The stack will probably change as we experiment and figure out what works best.
 
 ---
 
+### Technical Infos
+
+#### General
+Right now, our backend renders your FITS files directly on the **GPU**, which gives really good performance and smooth image handling.  
+At the moment, only GPU rendering is supported since that’s standard for most computers today.  
+However, we plan to add a CPU fallback later so the app can still run on systems without a dedicated or compatible GPU.
+
+#### Performance
+Performance is one of our main focuses. We’re experimenting with different data loading and caching strategies to make opening large batches of FITS files feel instant.  
+In the future, we want to benchmark GPU vs CPU performance, and possibly even add adaptive rendering — so the viewer can automatically switch between modes depending on your hardware.
+
+---
+
 ### Contributing
 
 Right now RapidFits is **not ready for public contributions**, but we really appreciate feedback, ideas, and general discussion.  

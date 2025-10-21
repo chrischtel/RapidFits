@@ -8,6 +8,13 @@ body,
   overflow: hidden;
   height: 100vh;
   width: 100vw;
+  position: relative;
+  z-index: 1; /* Ensure webview is above GPU render */
+  pointer-events: none; /* Allow pass-through where no elements exist */
+}
+
+#root > * {
+  pointer-events: auto; /* Re-enable pointer events for actual elements */
 }
 
 :root {
@@ -29,6 +36,11 @@ body,
   flex-direction: column;
   height: 100vh;
   width: 100vw;
+  pointer-events: none; /* Allow GPU render to show through */
+}
+
+.app-layout > * {
+  pointer-events: auto; /* Re-enable for child elements */
 }
 
 /* Top toolbar */
@@ -41,6 +53,7 @@ body,
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   z-index: 100;
+  pointer-events: auto; /* Ensure toolbar captures mouse events */
 }
 
 .toolbar h1 {
@@ -77,6 +90,7 @@ body,
   overflow-x: hidden;
   z-index: 50;
   padding: 16px;
+  pointer-events: auto; /* Ensure sidebar captures mouse events */
 }
 
 /* Panel sections */
@@ -217,6 +231,7 @@ input[type="range"]::-moz-range-thumb {
   flex: 1;
   position: relative;
   /* WGPU renders behind this */
+  pointer-events: auto; /* Enable mouse events on this area */
 }
 
 .viewer-overlay {

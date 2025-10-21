@@ -215,6 +215,16 @@ impl FitsRenderer {
         Ok(())
     }
 
+    /// Update stretch min/max values
+    pub fn update_stretch(&self, min: f32, max: f32) {
+        if let Some(buffer) = &self.uniform_buffer {
+            // Update min and max values (indices 0, 1 in the uniform array)
+            let data = [min, max];
+            self.queue
+                .write_buffer(buffer, 0, bytemuck::cast_slice(&data)); // offset 0 bytes
+        }
+    }
+
     /// Update pan and zoom controls
     pub fn update_view(&self, zoom: f32, pan_x: f32, pan_y: f32) {
         if let Some(buffer) = &self.uniform_buffer {

@@ -4,9 +4,10 @@ use tauri::{Manager, State};
 pub mod fits;
 mod renderer;
 
-// State to hold the renderer
+// State to hold the renderer and image data
 struct AppState {
     renderer: Arc<Mutex<renderer::FitsRenderer>>,
+    stats: Arc<fits::ImageStats>,
 }
 
 // Learn more about Tauri commands at https://tauri.app/develop/calling-rust/
@@ -21,12 +22,40 @@ fn update_view(state: State<AppState>, zoom: f32, pan_x: f32, pan_y: f32) {
     renderer.update_view(zoom, pan_x, pan_y);
 }
 
+#[tauri::command]
+fn update_stretch(state: State<AppState>, min: f32, max: f32) {
+    let renderer = state.renderer.lock().unwrap();
+    renderer.update_stretch(min, max);
+}
+
+#[tauri::command]
+fn get_image_stats(state: State<AppState>) -> fits::ImageStats {
+    (*state.stats).clone()
+}
+
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
     // Load FITS file first
     let fits_path = "C:/Users/chris/Downloads/RemoteAstrophotography-com-NGC300-LRGB/NGC300-L.fit";
     let fits_img = fits::load_fits_f32(fits_path).expect("Failed to load FITS file");
     println!("📷 Loaded FITS: {}x{}", fits_img.width, fits_img.height);
+
+    // Print statistics
+    println!("📊 Statistics:");
+    println!(
+        "   Min: {:.2}, Max: {:.2}",
+        fits_img.stats.min, fits_img.stats.max
+    );
+    println!(
+        "   Mean: {:.2}, StdDev: {:.2}",
+        fits_img.stats.mean, fits_img.stats.stddev
+    );
+    println!("   Median: {:.2}", fits_img.stats.median);
+
+    // Calculate auto-stretch (0.5% to 99.5% percentile)
+    let (stretch_min, stretch_max) =
+        fits::calculate_auto_stretch(&fits_img.stats, &fits_img.data, 0.5, 99.5);
+    println!("🎨 Auto-stretch: {:.2} to {:.2}", stretch_min, stretch_max);
 
     tauri::Builder::default()
         .plugin(tauri_plugin_opener::init())
@@ -52,14 +81,29 @@ pub fn run() {
                     "✅ Render pipeline created with format: {:?}",
                     surface_format
                 );
+
+                // Apply auto-stretch
+                r.update_stretch(stretch_min, stretch_max);
+                println!(
+                    "✅ Applied auto-stretch: {:.2} to {:.2}",
+                    stretch_min, stretch_max
+                );
             }
 
-            // Store renderer in app state
-            app.manage(AppState { renderer });
+            // Store renderer and stats in app state
+            app.manage(AppState {
+                renderer,
+                stats: Arc::new(fits_img.stats),
+            });
 
             Ok(())
         })
-        .invoke_handler(tauri::generate_handler![greet, update_view])
+        .invoke_handler(tauri::generate_handler![
+            greet,
+            update_view,
+            update_stretch,
+            get_image_stats
+        ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }

@@ -1,10 +1,10 @@
 use anyhow::*;
 use std::result::Result::{Err as StdErr, Ok as StdOk};
-use std::sync::Arc;
+use std::sync::{Arc, Mutex};
 use std::{thread, time::Duration};
 use tauri::WebviewWindow;
 use wgpu::rwh::{HasDisplayHandle, HasWindowHandle};
-use wgpu::wgc::device;
+use wgpu::util::DeviceExt;
 
 pub struct FitsRenderer {
     device: Arc<wgpu::Device>,
@@ -12,6 +12,10 @@ pub struct FitsRenderer {
     texture: Option<Arc<wgpu::Texture>>,
     width: u32,
     height: u32,
+
+    pipeline: Option<wgpu::RenderPipeline>,
+    bind_group: Option<wgpu::BindGroup>,
+    uniform_buffer: Option<wgpu::Buffer>,
 }
 
 impl FitsRenderer {
@@ -22,7 +26,163 @@ impl FitsRenderer {
             texture: None,
             width: 0,
             height: 0,
+            pipeline: None,
+            bind_group: None,
+            uniform_buffer: None,
         }
+    }
+    pub fn create_pipeline(&mut self, surface_format: wgpu::TextureFormat) -> Result<()> {
+        // 1. Load WGSL shader
+        let shader_source = include_str!("shader.wgsl");
+        let shader_module = self
+            .device
+            .create_shader_module(wgpu::ShaderModuleDescriptor {
+                label: Some("FITS Shader"),
+                source: wgpu::ShaderSource::Wgsl(shader_source.into()),
+            });
+
+        // 2. Create uniform buffer (min, max, brightness, contrast)
+        let uniform_data = [0.0f32, 65535.0f32, 0.0f32, 1.0f32]; // min, max, brightness, contrast
+        let uniform_buffer = self
+            .device
+            .create_buffer_init(&wgpu::util::BufferInitDescriptor {
+                label: Some("Uniform Buffer"),
+                contents: bytemuck::cast_slice(&uniform_data),
+                usage: wgpu::BufferUsages::UNIFORM | wgpu::BufferUsages::COPY_DST,
+            });
+
+        // 3. Create texture sampler (Nearest for R32Float since it's not filterable)
+        let sampler = self.device.create_sampler(&wgpu::SamplerDescriptor {
+            label: Some("FITS Sampler"),
+            address_mode_u: wgpu::AddressMode::ClampToEdge,
+            address_mode_v: wgpu::AddressMode::ClampToEdge,
+            address_mode_w: wgpu::AddressMode::ClampToEdge,
+            mag_filter: wgpu::FilterMode::Nearest,
+            min_filter: wgpu::FilterMode::Nearest,
+            ..Default::default()
+        });
+
+        // You must have a texture already loaded
+        let texture = self.texture.as_ref().context("Texture not yet loaded")?;
+        let texture_view = texture.create_view(&wgpu::TextureViewDescriptor::default());
+
+        // 4. Bind group layout for texture + sampler + uniform buffer
+        let bind_group_layout =
+            self.device
+                .create_bind_group_layout(&wgpu::BindGroupLayoutDescriptor {
+                    label: Some("FITS Bind Group Layout"),
+                    entries: &[
+                        // Texture binding
+                        wgpu::BindGroupLayoutEntry {
+                            binding: 0,
+                            visibility: wgpu::ShaderStages::FRAGMENT,
+                            ty: wgpu::BindingType::Texture {
+                                multisampled: false,
+                                view_dimension: wgpu::TextureViewDimension::D2,
+                                sample_type: wgpu::TextureSampleType::Float { filterable: false },
+                            },
+                            count: None,
+                        },
+                        // Sampler binding
+                        wgpu::BindGroupLayoutEntry {
+                            binding: 1,
+                            visibility: wgpu::ShaderStages::FRAGMENT,
+                            ty: wgpu::BindingType::Sampler(wgpu::SamplerBindingType::NonFiltering),
+                            count: None,
+                        },
+                        // Uniform buffer binding
+                        wgpu::BindGroupLayoutEntry {
+                            binding: 2,
+                            visibility: wgpu::ShaderStages::FRAGMENT,
+                            ty: wgpu::BindingType::Buffer {
+                                ty: wgpu::BufferBindingType::Uniform,
+                                has_dynamic_offset: false,
+                                min_binding_size: None,
+                            },
+                            count: None,
+                        },
+                    ],
+                });
+
+        // 5. Create the bind group
+        let bind_group = self.device.create_bind_group(&wgpu::BindGroupDescriptor {
+            label: Some("FITS Bind Group"),
+            layout: &bind_group_layout,
+            entries: &[
+                wgpu::BindGroupEntry {
+                    binding: 0,
+                    resource: wgpu::BindingResource::TextureView(&texture_view),
+                },
+                wgpu::BindGroupEntry {
+                    binding: 1,
+                    resource: wgpu::BindingResource::Sampler(&sampler),
+                },
+                wgpu::BindGroupEntry {
+                    binding: 2,
+                    resource: uniform_buffer.as_entire_binding(),
+                },
+            ],
+        });
+
+        // 6. Create the pipeline layout
+        let pipeline_layout = self
+            .device
+            .create_pipeline_layout(&wgpu::PipelineLayoutDescriptor {
+                label: Some("FITS Pipeline Layout"),
+                bind_group_layouts: &[&bind_group_layout],
+                push_constant_ranges: &[],
+            });
+
+        // 7. Create a fullscreen quad vertex buffer layout (no vertex buffer used)
+        let vertex_state = wgpu::VertexState {
+            module: &shader_module,
+            entry_point: Some("vs_main"),
+            buffers: &[], // fullscreen triangle via shader
+            compilation_options: Default::default(),
+        };
+
+        // 8. Create the render pipeline
+        let pipeline = self
+            .device
+            .create_render_pipeline(&wgpu::RenderPipelineDescriptor {
+                label: Some("FITS Render Pipeline"),
+                layout: Some(&pipeline_layout),
+                vertex: vertex_state,
+                fragment: Some(wgpu::FragmentState {
+                    module: &shader_module,
+                    entry_point: Some("fs_main"),
+                    targets: &[Some(wgpu::ColorTargetState {
+                        format: surface_format,
+                        blend: Some(wgpu::BlendState::ALPHA_BLENDING),
+                        write_mask: wgpu::ColorWrites::ALL,
+                    })],
+                    compilation_options: Default::default(),
+                }),
+                primitive: wgpu::PrimitiveState {
+                    topology: wgpu::PrimitiveTopology::TriangleList,
+                    strip_index_format: None,
+                    front_face: wgpu::FrontFace::Ccw,
+                    cull_mode: None,
+                    polygon_mode: wgpu::PolygonMode::Fill,
+                    unclipped_depth: false,
+                    conservative: false,
+                },
+                depth_stencil: None,
+                multisample: wgpu::MultisampleState {
+                    count: 1,
+                    mask: !0,
+                    alpha_to_coverage_enabled: false,
+                },
+                multiview: None,
+                cache: None,
+            });
+
+        // 9. Store them
+        self.pipeline = Some(pipeline);
+        self.bind_group = Some(bind_group);
+        self.uniform_buffer = Some(uniform_buffer);
+
+        Ok(())
     }
 
     pub fn load_fits_data(&mut self, data: Vec<f32>, w: usize, h: usize) -> Result<()> {
@@ -45,11 +205,34 @@ impl FitsRenderer {
 
         let texture = self.device.create_texture(&desc);
 
+        self.queue.write_texture(
+            wgpu::TexelCopyTextureInfo {
+                texture: &texture,
+                mip_level: 0,
+                origin: wgpu::Origin3d::ZERO,
+                aspect: wgpu::TextureAspect::All,
+            },
+            bytemuck::cast_slice(&data), // Convert Vec<f32> to &[u8] bytes
+            wgpu::TexelCopyBufferLayout {
+                offset: 0,
+                bytes_per_row: Some(w as u32 * 4), // 4 bytes per f32
+                rows_per_image: Some(h as u32),
+            },
+            size, // The same size you used for texture creation
+        );
+
+        // Store the texture
+        self.texture = Some(Arc::new(texture));
+        self.width = w as u32;
+        self.height = h as u32;
+
         Ok(())
     }
 }
 
-pub fn init_renderer_for_window(window: &WebviewWindow) -> Result<()> {
+pub fn init_renderer_for_window(
+    window: &WebviewWindow,
+) -> Result<(Arc<Mutex<FitsRenderer>>, wgpu::TextureFormat)> {
     println!(
         "🚀 Initializing transparent WGPU renderer for '{}'",
         window.label()
@@ -88,6 +271,21 @@ pub fn init_renderer_for_window(window: &WebviewWindow) -> Result<()> {
     let format = caps.formats[0];
     let size = window.inner_size()?;
 
+    // Wrap device and queue in Arc for sharing
+    let device = Arc::new(device);
+    let queue = Arc::new(queue);
+
+    // Create the renderer
+    let renderer = Arc::new(Mutex::new(FitsRenderer::new(
+        Arc::clone(&device),
+        Arc::clone(&queue),
+    )));
+
+    // Clone for the render thread
+    let renderer_clone = Arc::clone(&renderer);
+    let device_clone = Arc::clone(&device);
+    let queue_clone = Arc::clone(&queue);
+
     // Try to find a supported alpha mode, preferring PreMultiplied for transparency
     let alpha_mode = if caps
         .alpha_modes
@@ -121,7 +319,7 @@ pub fn init_renderer_for_window(window: &WebviewWindow) -> Result<()> {
         alpha_mode,
         view_formats: vec![],
     };
-    surface.configure(&device, &config);
+    surface.configure(&device_clone, &config);
 
     // Spawn continuous rendering thread
     thread::spawn(move || {
@@ -141,34 +339,64 @@ pub fn init_renderer_for_window(window: &WebviewWindow) -> Result<()> {
                     });
 
                     let mut encoder =
-                        device.create_command_encoder(&wgpu::CommandEncoderDescriptor {
-                            label: Some("clear-encoder"),
+                        device_clone.create_command_encoder(&wgpu::CommandEncoderDescriptor {
+                            label: Some("render-encoder"),
                         });
 
                     {
-                        let _rpass = encoder.begin_render_pass(&wgpu::RenderPassDescriptor {
-                            label: Some("clear-pass"),
-                            color_attachments: &[Some(wgpu::RenderPassColorAttachment {
-                                view: &view,
-                                resolve_target: None,
-                                ops: wgpu::Operations {
-                                    load: wgpu::LoadOp::Clear(wgpu::Color {
-                                        r: 0.2,
-                                        g: 0.5,
-                                        b: 0.8,
-                                        a: 1.0, // Bright blue so it's visible
-                                    }),
-                                    store: wgpu::StoreOp::Store,
-                                },
-                                depth_slice: None,
-                            })],
-                            depth_stencil_attachment: None,
-                            occlusion_query_set: None,
-                            timestamp_writes: None,
-                        });
+                        let renderer = renderer_clone.lock().unwrap();
+
+                        // Check if we have a pipeline to render with
+                        if let (Some(pipeline), Some(bind_group)) =
+                            (&renderer.pipeline, &renderer.bind_group)
+                        {
+                            // Render the FITS image
+                            let mut rpass =
+                                encoder.begin_render_pass(&wgpu::RenderPassDescriptor {
+                                    label: Some("fits-render-pass"),
+                                    color_attachments: &[Some(wgpu::RenderPassColorAttachment {
+                                        view: &view,
+                                        resolve_target: None,
+                                        ops: wgpu::Operations {
+                                            load: wgpu::LoadOp::Clear(wgpu::Color::BLACK),
+                                            store: wgpu::StoreOp::Store,
+                                        },
+                                        depth_slice: None,
+                                    })],
+                                    depth_stencil_attachment: None,
+                                    occlusion_query_set: None,
+                                    timestamp_writes: None,
+                                });
+
+                            rpass.set_pipeline(pipeline);
+                            rpass.set_bind_group(0, bind_group, &[]);
+                            rpass.draw(0..3, 0..1); // Draw fullscreen triangle
+                        } else {
+                            // No pipeline yet, just clear to blue
+                            let _rpass = encoder.begin_render_pass(&wgpu::RenderPassDescriptor {
+                                label: Some("clear-pass"),
+                                color_attachments: &[Some(wgpu::RenderPassColorAttachment {
+                                    view: &view,
+                                    resolve_target: None,
+                                    ops: wgpu::Operations {
+                                        load: wgpu::LoadOp::Clear(wgpu::Color {
+                                            r: 0.2,
+                                            g: 0.5,
+                                            b: 0.8,
+                                            a: 1.0,
+                                        }),
+                                        store: wgpu::StoreOp::Store,
+                                    },
+                                    depth_slice: None,
+                                })],
+                                depth_stencil_attachment: None,
+                                occlusion_query_set: None,
+                                timestamp_writes: None,
+                            });
+                        }
                     }
 
-                    queue.submit(Some(encoder.finish()));
+                    queue_clone.submit(Some(encoder.finish()));
                     frame.present();
                 }
                 StdErr(_) => {}
@@ -178,5 +406,5 @@ pub fn init_renderer_for_window(window: &WebviewWindow) -> Result<()> {
     });
 
     println!("✅ WGPU transparent renderer started");
-    Ok(())
+    Ok((renderer, format))
 }

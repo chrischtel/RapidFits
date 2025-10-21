@@ -90,28 +90,6 @@ async fn open_single_fits_file(
 
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
-    // Load FITS file first
-    let fits_path = "C:/Users/chris/Downloads/RemoteAstrophotography-com-NGC300-LRGB/NGC300-L.fit";
-    let fits_img = fits::load_fits_f32(fits_path).expect("Failed to load FITS file");
-    println!("📷 Loaded FITS: {}x{}", fits_img.width, fits_img.height);
-
-    // Print statistics
-    println!("📊 Statistics:");
-    println!(
-        "   Min: {:.2}, Max: {:.2}",
-        fits_img.stats.min, fits_img.stats.max
-    );
-    println!(
-        "   Mean: {:.2}, StdDev: {:.2}",
-        fits_img.stats.mean, fits_img.stats.stddev
-    );
-    println!("   Median: {:.2}", fits_img.stats.median);
-
-    // Calculate auto-stretch (0.5% to 99.5% percentile)
-    let (stretch_min, stretch_max) =
-        fits::calculate_auto_stretch(&fits_img.stats, &fits_img.data, 0.5, 99.5);
-    println!("🎨 Auto-stretch: {:.2} to {:.2}", stretch_min, stretch_max);
-
     tauri::Builder::default()
         .plugin(tauri_plugin_opener::init())
         .setup(move |app| {
@@ -121,34 +99,22 @@ pub fn run() {
             // Initialize WGPU renderer on the main window (returns renderer and surface format)
             let (renderer, surface_format) = renderer::init_renderer_for_window(&main_window)?;
 
-            // Get window size for aspect ratio
-            let window_size = main_window.inner_size()?;
+            println!("WGPU renderer initialized, waiting for FITS file to be loaded");
 
-            // Upload FITS data to GPU
-            {
-                let mut r = renderer.lock().unwrap();
-                r.load_fits_data(fits_img.data, fits_img.width, fits_img.height)?;
-                println!("✅ FITS data uploaded to GPU");
+            // Create placeholder/empty stats
+            let placeholder_stats = fits::ImageStats {
+                min: 0.0,
+                max: 0.0,
+                mean: 0.0,
+                stddev: 0.0,
+                median: 0.0,
+                histogram: vec![0; 256],
+            };
 
-                // Create the render pipeline with the actual surface format and viewport size
-                r.create_pipeline(surface_format, window_size.width, window_size.height)?;
-                println!(
-                    "✅ Render pipeline created with format: {:?}",
-                    surface_format
-                );
-
-                // Apply auto-stretch
-                r.update_stretch(stretch_min, stretch_max);
-                println!(
-                    "✅ Applied auto-stretch: {:.2} to {:.2}",
-                    stretch_min, stretch_max
-                );
-            }
-
-            // Store renderer and stats in app state
+            // Store renderer and stats in app state (no image loaded yet)
             app.manage(AppState {
                 renderer,
-                stats: Arc::new(Mutex::new(fits_img.stats)),
+                stats: Arc::new(Mutex::new(placeholder_stats)),
                 surface_format: Arc::new(Mutex::new(surface_format)),
             });
 

@@ -7,7 +7,8 @@ mod renderer;
 // State to hold the renderer and image data
 struct AppState {
     renderer: Arc<Mutex<renderer::FitsRenderer>>,
-    stats: Arc<fits::ImageStats>,
+    stats: Arc<Mutex<fits::ImageStats>>,
+    surface_format: Arc<Mutex<wgpu::TextureFormat>>,
 }
 
 // Learn more about Tauri commands at https://tauri.app/develop/calling-rust/
@@ -30,7 +31,61 @@ fn update_stretch(state: State<AppState>, min: f32, max: f32) {
 
 #[tauri::command]
 fn get_image_stats(state: State<AppState>) -> fits::ImageStats {
-    (*state.stats).clone()
+    (*state.stats.lock().unwrap()).clone()
+}
+
+#[tauri::command]
+async fn open_single_fits_file(
+    state: State<'_, AppState>,
+    path: String,
+) -> Result<fits::ImageStats, String> {
+    // Load FITS file
+    let fits_img = fits::load_fits_f32(&path).map_err(|e| format!("Failed to load FITS: {}", e))?;
+
+    println!("Loaded FITS: {}x{}", fits_img.width, fits_img.height);
+    println!("Statistics:");
+    println!(
+        "   Min: {:.2}, Max: {:.2}",
+        fits_img.stats.min, fits_img.stats.max
+    );
+    println!(
+        "   Mean: {:.2}, StdDev: {:.2}",
+        fits_img.stats.mean, fits_img.stats.stddev
+    );
+    println!("   Median: {:.2}", fits_img.stats.median);
+
+    // Calculate auto-stretch
+    let (stretch_min, stretch_max) =
+        fits::calculate_auto_stretch(&fits_img.stats, &fits_img.data, 0.5, 99.5);
+    println!("Auto-stretch: {:.2} to {:.2}", stretch_min, stretch_max);
+
+    // Update renderer with new data
+    {
+        let mut renderer = state.renderer.lock().unwrap();
+        let surface_format = *state.surface_format.lock().unwrap();
+
+        // Upload new FITS data to GPU
+        renderer
+            .load_fits_data(fits_img.data, fits_img.width, fits_img.height)
+            .map_err(|e| format!("Failed to upload to GPU: {}", e))?;
+
+        // Recreate pipeline with new dimensions (assume window size hasn't changed)
+        // Note: In a real app, you'd get the actual window size here
+        renderer
+            .create_pipeline(surface_format, 1200, 800)
+            .map_err(|e| format!("Failed to create pipeline: {}", e))?;
+
+        // Apply auto-stretch
+        renderer.update_stretch(stretch_min, stretch_max);
+
+        println!("FITS data uploaded to GPU and pipeline updated");
+    }
+
+    // Update stats in state
+    let new_stats = fits_img.stats.clone();
+    *state.stats.lock().unwrap() = fits_img.stats;
+
+    Ok(new_stats)
 }
 
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
@@ -93,7 +148,8 @@ pub fn run() {
             // Store renderer and stats in app state
             app.manage(AppState {
                 renderer,
-                stats: Arc::new(fits_img.stats),
+                stats: Arc::new(Mutex::new(fits_img.stats)),
+                surface_format: Arc::new(Mutex::new(surface_format)),
             });
 
             Ok(())
@@ -102,7 +158,8 @@ pub fn run() {
             greet,
             update_view,
             update_stretch,
-            get_image_stats
+            get_image_stats,
+            open_single_fits_file
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

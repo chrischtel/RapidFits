@@ -1,8 +1,53 @@
 use anyhow::*;
 use std::result::Result::{Err as StdErr, Ok as StdOk};
+use std::sync::Arc;
 use std::{thread, time::Duration};
 use tauri::WebviewWindow;
 use wgpu::rwh::{HasDisplayHandle, HasWindowHandle};
+use wgpu::wgc::device;
+
+pub struct FitsRenderer {
+    device: Arc<wgpu::Device>,
+    queue: Arc<wgpu::Queue>,
+    texture: Option<Arc<wgpu::Texture>>,
+    width: u32,
+    height: u32,
+}
+
+impl FitsRenderer {
+    pub fn new(device: Arc<wgpu::Device>, queue: Arc<wgpu::Queue>) -> Self {
+        Self {
+            device,
+            queue,
+            texture: None,
+            width: 0,
+            height: 0,
+        }
+    }
+
+    pub fn load_fits_data(&mut self, data: Vec<f32>, w: usize, h: usize) -> Result<()> {
+        let size = wgpu::Extent3d {
+            width: w as u32,
+            height: h as u32,
+            depth_or_array_layers: 1,
+        };
+
+        let desc = wgpu::TextureDescriptor {
+            label: Some("Fits DATA Texture"),
+            size,
+            mip_level_count: 1,
+            sample_count: 1,
+            dimension: wgpu::TextureDimension::D2,
+            format: wgpu::TextureFormat::R32Float,
+            usage: wgpu::TextureUsages::TEXTURE_BINDING | wgpu::TextureUsages::COPY_DST,
+            view_formats: &[],
+        };
+
+        let texture = self.device.create_texture(&desc);
+
+        Ok(())
+    }
+}
 
 pub fn init_renderer_for_window(window: &WebviewWindow) -> Result<()> {
     println!(

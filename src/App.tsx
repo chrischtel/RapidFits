@@ -375,10 +375,11 @@ function App() {
 }
 
 async function openFileDialog() {
-  const file = await open({
+  const filepath = await open({
     multiple: false,
     directory: false,
   });
+  invoke("open_single_fits_file", { path: filepath });
 }
 
 export default App;

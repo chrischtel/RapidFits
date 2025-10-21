@@ -1,5 +1,6 @@
 import { createSignal, onMount } from "solid-js";
 import { invoke } from "@tauri-apps/api/core";
+import { open } from "@tauri-apps/plugin-dialog";
 import "./App.css";
 
 interface ImageStats {
@@ -177,7 +178,7 @@ function App() {
       <header class="toolbar">
         <h1>RapidFits - GPU FITS Viewer</h1>
         <div class="toolbar-actions">
-          <button>Open File</button>
+          <button onClick={openFileDialog}>Open File</button>
           <button>Export</button>
           <button type="button">Settings</button>
         </div>
@@ -371,6 +372,13 @@ function App() {
       </div>
     </div>
   );
+}
+
+async function openFileDialog() {
+  const file = await open({
+    multiple: false,
+    directory: false,
+  });
 }
 
 export default App;

@@ -31,7 +31,12 @@ impl FitsRenderer {
             uniform_buffer: None,
         }
     }
-    pub fn create_pipeline(&mut self, surface_format: wgpu::TextureFormat) -> Result<()> {
+    pub fn create_pipeline(
+        &mut self,
+        surface_format: wgpu::TextureFormat,
+        viewport_width: u32,
+        viewport_height: u32,
+    ) -> Result<()> {
         // 1. Load WGSL shader
         let shader_source = include_str!("shader.wgsl");
         let shader_module = self
@@ -41,8 +46,33 @@ impl FitsRenderer {
                 source: wgpu::ShaderSource::Wgsl(shader_source.into()),
             });
 
-        // 2. Create uniform buffer (min, max, brightness, contrast)
-        let uniform_data = [0.0f32, 65535.0f32, 0.0f32, 1.0f32]; // min, max, brightness, contrast
+        // 2. Create uniform buffer (min, max, brightness, contrast, zoom, pan_x, pan_y, aspect_ratio, viewport_aspect, padding)
+        let image_aspect = self.width as f32 / self.height as f32;
+        let viewport_aspect = viewport_width as f32 / viewport_height as f32;
+
+        println!(
+            "📐 Image aspect: {} ({}x{})",
+            image_aspect, self.width, self.height
+        );
+        println!(
+            "📐 Viewport aspect: {} ({}x{})",
+            viewport_aspect, viewport_width, viewport_height
+        );
+
+        let uniform_data = [
+            0.0f32,          // min_value
+            65535.0f32,      // max_value
+            0.0f32,          // brightness
+            1.0f32,          // contrast
+            1.0f32,          // zoom (1.0 = fit to screen)
+            0.0f32,          // pan_x
+            0.0f32,          // pan_y
+            image_aspect,    // aspect_ratio of image
+            viewport_aspect, // viewport_aspect (actual window dimensions)
+            0.0f32,          // padding1
+            0.0f32,          // padding2
+            0.0f32,          // padding3
+        ];
         let uniform_buffer = self
             .device
             .create_buffer_init(&wgpu::util::BufferInitDescriptor {
@@ -183,6 +213,27 @@ impl FitsRenderer {
         self.uniform_buffer = Some(uniform_buffer);
 
         Ok(())
+    }
+
+    /// Update pan and zoom controls
+    pub fn update_view(&self, zoom: f32, pan_x: f32, pan_y: f32) {
+        if let Some(buffer) = &self.uniform_buffer {
+            // Update only the zoom and pan values (indices 4, 5, 6 in the uniform array)
+            let data = [zoom, pan_x, pan_y];
+            self.queue
+                .write_buffer(buffer, 16, bytemuck::cast_slice(&data)); // offset 16 bytes (4 floats * 4 bytes)
+        }
+    }
+
+    /// Update viewport aspect ratio when window is resized
+    pub fn update_viewport_aspect(&self, viewport_width: u32, viewport_height: u32) {
+        if let Some(buffer) = &self.uniform_buffer {
+            let viewport_aspect = viewport_width as f32 / viewport_height as f32;
+            // viewport_aspect is at index 8 in the uniform array
+            self.queue
+                .write_buffer(buffer, 32, bytemuck::cast_slice(&[viewport_aspect]));
+            // offset 32 bytes (8 floats * 4 bytes)
+        }
     }
 
     pub fn load_fits_data(&mut self, data: Vec<f32>, w: usize, h: usize) -> Result<()> {

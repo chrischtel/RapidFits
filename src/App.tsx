@@ -1,5 +1,6 @@
 import { createSignal, onMount } from "solid-js";
 import { invoke } from "@tauri-apps/api/core";
+import { open } from "@tauri-apps/plugin-dialog";
 import "./App.css";
 
 interface ImageStats {
@@ -165,6 +166,26 @@ function App() {
     ctx.stroke();
   };
 
+  async function openFileDialog() {
+    const filepath = await open({
+      multiple: false,
+      directory: false,
+    });
+
+    // Add this check in case the user cancels the dialog
+    if (typeof filepath === "string") {
+      const newStats = await invoke<ImageStats>("open_single_fits_file", {
+        path: filepath,
+      });
+      
+      // Now this works, because setStats and drawHistogram are in the same scope!
+      setStats(newStats);
+      setStretchMin(newStats.min);
+      setStretchMax(newStats.max);
+      drawHistogram(); 
+    }
+  }
+
   onMount(async () => {
     updateView(); // Initial view
     await loadStats(); // Load statistics
@@ -177,7 +198,7 @@ function App() {
       <header class="toolbar">
         <h1>RapidFits - GPU FITS Viewer</h1>
         <div class="toolbar-actions">
-          <button>Open File</button>
+          <button onClick={openFileDialog}>Open File</button>
           <button>Export</button>
           <button type="button">Settings</button>
         </div>
@@ -372,5 +393,7 @@ function App() {
     </div>
   );
 }
+
+
 
 export default App;

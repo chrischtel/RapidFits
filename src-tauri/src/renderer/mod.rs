@@ -386,19 +386,11 @@ pub fn init_renderer_for_window(
     thread::spawn(move || {
         loop {
             match surface.get_current_texture() {
-                StdOk(frame) => {
-                    let view = frame.texture.create_view(&wgpu::TextureViewDescriptor {
-                        label: Some("surface-view"),
-                        dimension: Some(wgpu::TextureViewDimension::D2),
-                        format: None,
-                        aspect: wgpu::TextureAspect::All,
-                        base_mip_level: 0,
-                        mip_level_count: None,
-                        base_array_layer: 0,
-                        array_layer_count: None,
-                        usage: Some(wgpu::TextureUsages::RENDER_ATTACHMENT),
-                    });
-
+                Ok(frame) => {
+                    // Create a texture view for the current frame
+                    let view = frame
+                        .texture
+                        .create_view(&wgpu::TextureViewDescriptor::default());
                     let mut encoder =
                         device_clone.create_command_encoder(&wgpu::CommandEncoderDescriptor {
                             label: Some("render-encoder"),
@@ -407,11 +399,9 @@ pub fn init_renderer_for_window(
                     {
                         let renderer = renderer_clone.lock().unwrap();
 
-                        // Check if we have a pipeline to render with
                         if let (Some(pipeline), Some(bind_group)) =
                             (&renderer.pipeline, &renderer.bind_group)
                         {
-                            // Render the FITS image
                             let mut rpass =
                                 encoder.begin_render_pass(&wgpu::RenderPassDescriptor {
                                     label: Some("fits-render-pass"),
@@ -431,9 +421,9 @@ pub fn init_renderer_for_window(
 
                             rpass.set_pipeline(pipeline);
                             rpass.set_bind_group(0, bind_group, &[]);
-                            rpass.draw(0..3, 0..1); // Draw fullscreen triangle
+                            rpass.draw(0..3, 0..1);
                         } else {
-                            // No pipeline yet, just clear to blue
+                            // No pipeline yet — just clear
                             let _rpass = encoder.begin_render_pass(&wgpu::RenderPassDescriptor {
                                 label: Some("clear-pass"),
                                 color_attachments: &[Some(wgpu::RenderPassColorAttachment {
@@ -460,8 +450,29 @@ pub fn init_renderer_for_window(
                     queue_clone.submit(Some(encoder.finish()));
                     frame.present();
                 }
-                StdErr(_) => {}
+
+                Err(wgpu::SurfaceError::Lost) | Err(wgpu::SurfaceError::Outdated) => {
+                    // Happens when window is resized, maximized, minimized, etc.
+                    println!("🔁 Surface lost or outdated — reconfiguring surface");
+                    if let Ok(size) = window.inner_size() {
+                        config.width = size.width.max(1);
+                        config.height = size.height.max(1);
+                        surface.configure(&device_clone, &config);
+                    }
+                }
+
+                Err(wgpu::SurfaceError::Timeout) => {
+                    // Skip this frame, not a real error
+                    println!("⚠️ Surface timeout — skipping frame");
+                }
+
+                Err(wgpu::SurfaceError::OutOfMemory) => {
+                    // Fatal: GPU ran out of VRAM, stop rendering
+                    eprintln!("💥 GPU out of memory — terminating renderer thread");
+                    break;
+                }
             }
+
             thread::sleep(Duration::from_millis(16)); // ~60 fps
         }
     });

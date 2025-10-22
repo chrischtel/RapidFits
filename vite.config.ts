@@ -25,16 +25,8 @@ export default defineConfig(async () => ({
         }
       : undefined,
     watch: {
-      
       // 3. tell Vite to ignore watching `src-tauri`
-      ignored: ["**/src-tauri/**", "**/target/**", "**/node_modules/**"],
-      // Use polling as fallback for Windows file watching issues
-      usePolling: false,
-      // Increase watch delay to prevent race conditions
-      awaitWriteFinish: {
-        stabilityThreshold: 100,
-        pollInterval: 100
-      }
+      ignored: ["**/src-tauri/**"],
     },
   },
 }));

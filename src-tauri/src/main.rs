@@ -2,5 +2,5 @@
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
 fn main() {
-    rapidfits_lib::run();
+    rapidfits_lib::run()
 }

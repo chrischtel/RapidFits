@@ -2,18 +2,18 @@
   "$schema": "https://schema.tauri.app/config/2",
   "productName": "rapidfits",
   "version": "0.1.0",
-  "identifier": "org.openfits.rapidfits",
+  "identifier": "com.chris.rapidfits",
   "build": {
-    "beforeDevCommand": "deno task dev",
+    "beforeDevCommand": "bun run dev",
     "devUrl": "http://localhost:1420",
-    "beforeBuildCommand": "deno task build",
+    "beforeBuildCommand": "bun run build",
     "frontendDist": "../dist"
   },
   "app": {
     "windows": [
       {
         "label": "main",
-        "title": "RapidFits",
+        "title": "RapidFits - Your FITS toolkit",
         "width": 1200,
         "height": 800,
         "transparent": true,

@@ -114,9 +114,18 @@ pub fn run() {
 
             // Store renderer and stats in app state (no image loaded yet)
             app.manage(AppState {
-                renderer,
+                renderer: renderer.clone(),
                 stats: Arc::new(Mutex::new(placeholder_stats)),
                 surface_format: Arc::new(Mutex::new(surface_format)),
+            });
+
+            // Listen for window resize events to update viewport aspect
+            let renderer_for_resize = renderer.clone();
+            main_window.on_window_event(move |event| {
+                if let tauri::WindowEvent::Resized(size) = event {
+                    let renderer = renderer_for_resize.lock().unwrap();
+                    renderer.update_viewport_aspect(size.width, size.height);
+                }
             });
 
             Ok(())

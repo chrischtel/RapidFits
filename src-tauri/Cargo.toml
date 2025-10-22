@@ -18,16 +18,16 @@ crate-type = ["staticlib", "cdylib", "rlib"]
 tauri-build = { version = "2", features = [] }
 
 [dependencies]
-ndarray = "0.16.1"
-fitsio = "0.21.8"
 tauri = { version = "2", features = [] }
 tauri-plugin-opener = "2"
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
-pollster = "0.4.0"
-bytemuck = "1.24.0"
-anyhow = "1.0.100"
-thiserror = "2.0.17"
+parking_lot = "0.12.5"
 wgpu = "27.0.1"
-parking_lot = "0.12"
+thiserror = "2.0.17"
+anyhow = "1.0.100"
+bytemuck = "1.24.0"
+pollster = "0.4.0"
+fitsio = "0.21.8"
+ndarray = "0.16.1"
 tauri-plugin-dialog = "2"

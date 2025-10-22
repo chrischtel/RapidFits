@@ -1,2 +1,2181 @@
-    Blocking waiting for file lock on build directory
-    Finished `dev` profile [unoptimized + debuginfo] target(s) in 1m 14s
+   0.680384800s  INFO prepare_target{force=false package_id=rapidfits v0.1.0 (C:\Users\chris\RapidFits\src-tauri) target="rapidfits_lib"}: cargo::core::compiler::fingerprint: fingerprint error for rapidfits v0.1.0 (C:\Users\chris\RapidFits\src-tauri)/Check { test: false }/TargetInner { ..: lib_target("rapidfits_lib", ["staticlib", "cdylib", "rlib"], "C:\\Users\\chris\\RapidFits\\src-tauri\\src\\lib.rs", Edition2021) }
+   0.680459700s  INFO prepare_target{force=false package_id=rapidfits v0.1.0 (C:\Users\chris\RapidFits\src-tauri) target="rapidfits_lib"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\chris\RapidFits\src-tauri\target\debug\.fingerprint\rapidfits-e3bae34e5d33d765\lib-rapidfits_lib`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: <unknown>
+  15: <unknown>
+  16: git_midx_writer_dump
+  17: git_filter_source_repo
+  18: git_midx_writer_dump
+  19: BaseThreadInitThunk
+  20: RtlUserThreadStart
+   0.696256000s  INFO prepare_target{force=false package_id=bytemuck v1.24.0 target="bytemuck"}: cargo::core::compiler::fingerprint: fingerprint error for bytemuck v1.24.0/Check { test: false }/TargetInner { ..: lib_target("bytemuck", ["lib"], "C:\\Users\\chris\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\bytemuck-1.24.0\\src\\lib.rs", Edition2018) }
+   0.696299100s  INFO prepare_target{force=false package_id=bytemuck v1.24.0 target="bytemuck"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\chris\RapidFits\src-tauri\target\debug\.fingerprint\bytemuck-78e46f68c1805a01\lib-bytemuck`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: <unknown>
+  16: <unknown>
+  17: git_midx_writer_dump
+  18: git_filter_source_repo
+  19: git_midx_writer_dump
+  20: BaseThreadInitThunk
+  21: RtlUserThreadStart
+   0.701186000s  INFO prepare_target{force=false package_id=fitsio v0.21.8 target="fitsio"}: cargo::core::compiler::fingerprint: fingerprint error for fitsio v0.21.8/Check { test: false }/TargetInner { ..: lib_target("fitsio", ["lib"], "C:\\Users\\chris\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\fitsio-0.21.8\\src\\lib.rs", Edition2018) }
+   0.701229800s  INFO prepare_target{force=false package_id=fitsio v0.21.8 target="fitsio"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\chris\RapidFits\src-tauri\target\debug\.fingerprint\fitsio-7721bcd4b4c48c0c\lib-fitsio`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: <unknown>
+  16: <unknown>
+  17: git_midx_writer_dump
+  18: git_filter_source_repo
+  19: git_midx_writer_dump
+  20: BaseThreadInitThunk
+  21: RtlUserThreadStart
+   0.702287400s  INFO prepare_target{force=false package_id=fitsio-sys v0.5.6 target="fitsio_sys"}: cargo::core::compiler::fingerprint: fingerprint error for fitsio-sys v0.5.6/Check { test: false }/TargetInner { ..: lib_target("fitsio_sys", ["lib"], "C:\\Users\\chris\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\fitsio-sys-0.5.6\\src\\lib.rs", Edition2018) }
+   0.702313100s  INFO prepare_target{force=false package_id=fitsio-sys v0.5.6 target="fitsio_sys"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\chris\RapidFits\src-tauri\target\debug\.fingerprint\fitsio-sys-1505236cc072043e\lib-fitsio_sys`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: <unknown>
+  17: <unknown>
+  18: git_midx_writer_dump
+  19: git_filter_source_repo
+  20: git_midx_writer_dump
+  21: BaseThreadInitThunk
+  22: RtlUserThreadStart
+   0.706797700s  INFO prepare_target{force=false package_id=ndarray v0.16.1 target="ndarray"}: cargo::core::compiler::fingerprint: fingerprint error for ndarray v0.16.1/Check { test: false }/TargetInner { benched: false, ..: lib_target("ndarray", ["lib"], "C:\\Users\\chris\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\ndarray-0.16.1\\src\\lib.rs", Edition2018) }
+   0.706835400s  INFO prepare_target{force=false package_id=ndarray v0.16.1 target="ndarray"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\chris\RapidFits\src-tauri\target\debug\.fingerprint\ndarray-ccc14711620fc362\lib-ndarray`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: <unknown>
+  16: <unknown>
+  17: git_midx_writer_dump
+  18: git_filter_source_repo
+  19: git_midx_writer_dump
+  20: BaseThreadInitThunk
+  21: RtlUserThreadStart
+   0.707659100s  INFO prepare_target{force=false package_id=matrixmultiply v0.3.10 target="matrixmultiply"}: cargo::core::compiler::fingerprint: fingerprint error for matrixmultiply v0.3.10/Check { test: false }/TargetInner { benched: false, ..: lib_target("matrixmultiply", ["lib"], "C:\\Users\\chris\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\matrixmultiply-0.3.10\\src\\lib.rs", Edition2018) }
+   0.707684200s  INFO prepare_target{force=false package_id=matrixmultiply v0.3.10 target="matrixmultiply"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\chris\RapidFits\src-tauri\target\debug\.fingerprint\matrixmultiply-30926964ab7166d7\lib-matrixmultiply`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: <unknown>
+  17: <unknown>
+  18: git_midx_writer_dump
+  19: git_filter_source_repo
+  20: git_midx_writer_dump
+  21: BaseThreadInitThunk
+  22: RtlUserThreadStart
+   0.709879800s  INFO prepare_target{force=false package_id=rawpointer v0.2.1 target="rawpointer"}: cargo::core::compiler::fingerprint: fingerprint error for rawpointer v0.2.1/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("rawpointer", ["lib"], "C:\\Users\\chris\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\rawpointer-0.2.1\\src\\lib.rs", Edition2015) }
+   0.709909500s  INFO prepare_target{force=false package_id=rawpointer v0.2.1 target="rawpointer"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\chris\RapidFits\src-tauri\target\debug\.fingerprint\rawpointer-f31a50e7a4cdee4b\lib-rawpointer`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: <unknown>
+  18: <unknown>
+  19: git_midx_writer_dump
+  20: git_filter_source_repo
+  21: git_midx_writer_dump
+  22: BaseThreadInitThunk
+  23: RtlUserThreadStart
+   0.710844900s  INFO prepare_target{force=false package_id=num-complex v0.4.6 target="num_complex"}: cargo::core::compiler::fingerprint: fingerprint error for num-complex v0.4.6/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("num_complex", ["lib"], "C:\\Users\\chris\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\num-complex-0.4.6\\src\\lib.rs", Edition2021) }
+   0.710866500s  INFO prepare_target{force=false package_id=num-complex v0.4.6 target="num_complex"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\chris\RapidFits\src-tauri\target\debug\.fingerprint\num-complex-3def2f83f86345db\lib-num_complex`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: <unknown>
+  17: <unknown>
+  18: git_midx_writer_dump
+  19: git_filter_source_repo
+  20: git_midx_writer_dump
+  21: BaseThreadInitThunk
+  22: RtlUserThreadStart
+   0.711799400s  INFO prepare_target{force=false package_id=num-traits v0.2.19 target="num_traits"}: cargo::core::compiler::fingerprint: fingerprint error for num-traits v0.2.19/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("num_traits", ["lib"], "C:\\Users\\chris\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\num-traits-0.2.19\\src\\lib.rs", Edition2021) }
+   0.711834700s  INFO prepare_target{force=false package_id=num-traits v0.2.19 target="num_traits"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\chris\RapidFits\src-tauri\target\debug\.fingerprint\num-traits-93f96478915fb469\lib-num_traits`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: <unknown>
+  18: <unknown>
+  19: git_midx_writer_dump
+  20: git_filter_source_repo
+  21: git_midx_writer_dump
+  22: BaseThreadInitThunk
+  23: RtlUserThreadStart
+   0.712684400s  INFO prepare_target{force=false package_id=libm v0.2.15 target="libm"}: cargo::core::compiler::fingerprint: fingerprint error for libm v0.2.15/Check { test: false }/TargetInner { ..: lib_target("libm", ["lib"], "C:\\Users\\chris\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\libm-0.2.15\\src\\lib.rs", Edition2021) }
+   0.712706500s  INFO prepare_target{force=false package_id=libm v0.2.15 target="libm"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\chris\RapidFits\src-tauri\target\debug\.fingerprint\libm-34fae88177998145\lib-libm`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: <unknown>
+  19: <unknown>
+  20: git_midx_writer_dump
+  21: git_filter_source_repo
+  22: git_midx_writer_dump
+  23: BaseThreadInitThunk
+  24: RtlUserThreadStart
+   0.716322300s  INFO prepare_target{force=false package_id=num-integer v0.1.46 target="num_integer"}: cargo::core::compiler::fingerprint: fingerprint error for num-integer v0.1.46/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("num_integer", ["lib"], "C:\\Users\\chris\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\num-integer-0.1.46\\src\\lib.rs", Edition2018) }
+   0.716357600s  INFO prepare_target{force=false package_id=num-integer v0.1.46 target="num_integer"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\chris\RapidFits\src-tauri\target\debug\.fingerprint\num-integer-b13f29a83767a8b7\lib-num_integer`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: <unknown>
+  17: <unknown>
+  18: git_midx_writer_dump
+  19: git_filter_source_repo
+  20: git_midx_writer_dump
+  21: BaseThreadInitThunk
+  22: RtlUserThreadStart
+   0.717177400s  INFO prepare_target{force=false package_id=parking_lot v0.12.5 target="parking_lot"}: cargo::core::compiler::fingerprint: fingerprint error for parking_lot v0.12.5/Check { test: false }/TargetInner { ..: lib_target("parking_lot", ["lib"], "C:\\Users\\chris\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\parking_lot-0.12.5\\src\\lib.rs", Edition2021) }
+   0.717199900s  INFO prepare_target{force=false package_id=parking_lot v0.12.5 target="parking_lot"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\chris\RapidFits\src-tauri\target\debug\.fingerprint\parking_lot-f3ac5807c3c4c057\lib-parking_lot`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: <unknown>
+  16: <unknown>
+  17: git_midx_writer_dump
+  18: git_filter_source_repo
+  19: git_midx_writer_dump
+  20: BaseThreadInitThunk
+  21: RtlUserThreadStart
+   0.718407200s  INFO prepare_target{force=false package_id=parking_lot_core v0.9.12 target="parking_lot_core"}: cargo::core::compiler::fingerprint: fingerprint error for parking_lot_core v0.9.12/Check { test: false }/TargetInner { ..: lib_target("parking_lot_core", ["lib"], "C:\\Users\\chris\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\parking_lot_core-0.9.12\\src\\lib.rs", Edition2021) }
+   0.718428900s  INFO prepare_target{force=false package_id=parking_lot_core v0.9.12 target="parking_lot_core"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\chris\RapidFits\src-tauri\target\debug\.fingerprint\parking_lot_core-95a2b65d5301427c\lib-parking_lot_core`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: <unknown>
+  17: <unknown>
+  18: git_midx_writer_dump
+  19: git_filter_source_repo
+  20: git_midx_writer_dump
+  21: BaseThreadInitThunk
+  22: RtlUserThreadStart
+   0.720485600s  INFO prepare_target{force=false package_id=smallvec v1.15.1 target="smallvec"}: cargo::core::compiler::fingerprint: fingerprint error for smallvec v1.15.1/Check { test: false }/TargetInner { ..: lib_target("smallvec", ["lib"], "C:\\Users\\chris\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\smallvec-1.15.1\\src\\lib.rs", Edition2018) }
+   0.720512400s  INFO prepare_target{force=false package_id=smallvec v1.15.1 target="smallvec"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\chris\RapidFits\src-tauri\target\debug\.fingerprint\smallvec-953d8fc68856f177\lib-smallvec`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: <unknown>
+  18: <unknown>
+  19: git_midx_writer_dump
+  20: git_filter_source_repo
+  21: git_midx_writer_dump
+  22: BaseThreadInitThunk
+  23: RtlUserThreadStart
+   0.721547200s  INFO prepare_target{force=false package_id=pollster v0.4.0 target="pollster"}: cargo::core::compiler::fingerprint: fingerprint error for pollster v0.4.0/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("pollster", ["lib"], "C:\\Users\\chris\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\pollster-0.4.0\\src\\lib.rs", Edition2018) }
+   0.721582500s  INFO prepare_target{force=false package_id=pollster v0.4.0 target="pollster"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\chris\RapidFits\src-tauri\target\debug\.fingerprint\pollster-73ed525df0543595\lib-pollster`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: <unknown>
+  16: <unknown>
+  17: git_midx_writer_dump
+  18: git_filter_source_repo
+  19: git_midx_writer_dump
+  20: BaseThreadInitThunk
+  21: RtlUserThreadStart
+   0.801878800s  INFO prepare_target{force=false package_id=tauri v2.9.1 target="tauri"}: cargo::core::compiler::fingerprint: fingerprint error for tauri v2.9.1/Check { test: false }/TargetInner { ..: lib_target("tauri", ["lib"], "C:\\Users\\chris\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\tauri-2.9.1\\src\\lib.rs", Edition2021) }
+   0.801918100s  INFO prepare_target{force=false package_id=tauri v2.9.1 target="tauri"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\chris\RapidFits\src-tauri\target\debug\.fingerprint\tauri-2668da9bd7a29326\lib-tauri`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: <unknown>
+  16: <unknown>
+  17: git_midx_writer_dump
+  18: git_filter_source_repo
+  19: git_midx_writer_dump
+  20: BaseThreadInitThunk
+  21: RtlUserThreadStart
+   0.826245200s  INFO prepare_target{force=false package_id=tauri-runtime v2.9.1 target="tauri_runtime"}: cargo::core::compiler::fingerprint: fingerprint error for tauri-runtime v2.9.1/Check { test: false }/TargetInner { ..: lib_target("tauri_runtime", ["lib"], "C:\\Users\\chris\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\tauri-runtime-2.9.1\\src\\lib.rs", Edition2021) }
+   0.826300000s  INFO prepare_target{force=false package_id=tauri-runtime v2.9.1 target="tauri_runtime"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\chris\RapidFits\src-tauri\target\debug\.fingerprint\tauri-runtime-5a448b0dd3878d73\lib-tauri_runtime`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: <unknown>
+  17: <unknown>
+  18: git_midx_writer_dump
+  19: git_filter_source_repo
+  20: git_midx_writer_dump
+  21: BaseThreadInitThunk
+  22: RtlUserThreadStart
+   0.829204200s  INFO prepare_target{force=false package_id=tauri-utils v2.8.0 target="tauri_utils"}: cargo::core::compiler::fingerprint: fingerprint error for tauri-utils v2.8.0/Check { test: false }/TargetInner { ..: lib_target("tauri_utils", ["lib"], "C:\\Users\\chris\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\tauri-utils-2.8.0\\src\\lib.rs", Edition2021) }
+   0.829250500s  INFO prepare_target{force=false package_id=tauri-utils v2.8.0 target="tauri_utils"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\chris\RapidFits\src-tauri\target\debug\.fingerprint\tauri-utils-8dad4a9e39a8c1f5\lib-tauri_utils`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: <unknown>
+  18: <unknown>
+  19: git_midx_writer_dump
+  20: git_filter_source_repo
+  21: git_midx_writer_dump
+  22: BaseThreadInitThunk
+  23: RtlUserThreadStart
+   0.837224800s  INFO prepare_target{force=false package_id=url v2.5.7 target="url"}: cargo::core::compiler::fingerprint: fingerprint error for url v2.5.7/Check { test: false }/TargetInner { ..: lib_target("url", ["lib"], "C:\\Users\\chris\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\url-2.5.7\\src\\lib.rs", Edition2018) }
+   0.837277200s  INFO prepare_target{force=false package_id=url v2.5.7 target="url"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\chris\RapidFits\src-tauri\target\debug\.fingerprint\url-d9b65cf92c655bef\lib-url`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: <unknown>
+  19: <unknown>
+  20: git_midx_writer_dump
+  21: git_filter_source_repo
+  22: git_midx_writer_dump
+  23: BaseThreadInitThunk
+  24: RtlUserThreadStart
+   0.838910900s  INFO prepare_target{force=false package_id=idna v1.1.0 target="idna"}: cargo::core::compiler::fingerprint: fingerprint error for idna v1.1.0/Check { test: false }/TargetInner { doctest: false, ..: lib_target("idna", ["lib"], "C:\\Users\\chris\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\idna-1.1.0\\src\\lib.rs", Edition2018) }
+   0.838989100s  INFO prepare_target{force=false package_id=idna v1.1.0 target="idna"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\chris\RapidFits\src-tauri\target\debug\.fingerprint\idna-ebc560a913896e37\lib-idna`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_path
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: git_filter_source_repo
+  19: <unknown>
+  20: <unknown>
+  21: git_midx_writer_dump
+  22: git_filter_source_repo
+  23: git_midx_writer_dump
+  24: BaseThreadInitThunk
+  25: RtlUserThreadStart
+   0.840491100s  INFO prepare_target{force=false package_id=idna_adapter v1.2.1 target="idna_adapter"}: cargo::core::compiler::fingerprint: fingerprint error for idna_adapter v1.2.1/Check { test: false }/TargetInner { ..: lib_target("idna_adapter", ["lib"], "C:\\Users\\chris\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\idna_adapter-1.2.1\\src\\lib.rs", Edition2021) }
+   0.840523000s  INFO prepare_target{force=false package_id=idna_adapter v1.2.1 target="idna_adapter"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\chris\RapidFits\src-tauri\target\debug\.fingerprint\idna_adapter-2965df9523ca9404\lib-idna_adapter`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_path
+  14: git_filter_source_path
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: git_filter_source_repo
+  19: git_filter_source_repo
+  20: <unknown>
+  21: <unknown>
+  22: git_midx_writer_dump
+  23: git_filter_source_repo
+  24: git_midx_writer_dump
+  25: BaseThreadInitThunk
+  26: RtlUserThreadStart
+   0.841384200s  INFO prepare_target{force=false package_id=icu_normalizer v2.0.0 target="icu_normalizer"}: cargo::core::compiler::fingerprint: fingerprint error for icu_normalizer v2.0.0/Check { test: false }/TargetInner { ..: lib_target("icu_normalizer", ["lib"], "C:\\Users\\chris\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\icu_normalizer-2.0.0\\src\\lib.rs", Edition2021) }
+   0.841406500s  INFO prepare_target{force=false package_id=icu_normalizer v2.0.0 target="icu_normalizer"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\chris\RapidFits\src-tauri\target\debug\.fingerprint\icu_normalizer-b842e91e67aa9e4e\lib-icu_normalizer`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_path
+  14: git_filter_source_path
+  15: git_filter_source_path
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: git_filter_source_repo
+  19: git_filter_source_repo
+  20: git_filter_source_repo
+  21: <unknown>
+  22: <unknown>
+  23: git_midx_writer_dump
+  24: git_filter_source_repo
+  25: git_midx_writer_dump
+  26: BaseThreadInitThunk
+  27: RtlUserThreadStart
+   0.846577100s  INFO prepare_target{force=false package_id=urlpattern v0.3.0 target="urlpattern"}: cargo::core::compiler::fingerprint: fingerprint error for urlpattern v0.3.0/Check { test: false }/TargetInner { ..: lib_target("urlpattern", ["lib"], "C:\\Users\\chris\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\urlpattern-0.3.0\\src\\lib.rs", Edition2021) }
+   0.846686000s  INFO prepare_target{force=false package_id=urlpattern v0.3.0 target="urlpattern"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\chris\RapidFits\src-tauri\target\debug\.fingerprint\urlpattern-df1f37e87ca8141d\lib-urlpattern`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: <unknown>
+  19: <unknown>
+  20: git_midx_writer_dump
+  21: git_filter_source_repo
+  22: git_midx_writer_dump
+  23: BaseThreadInitThunk
+  24: RtlUserThreadStart
+   0.855701800s  INFO prepare_target{force=false package_id=tauri-runtime-wry v2.9.1 target="tauri_runtime_wry"}: cargo::core::compiler::fingerprint: fingerprint error for tauri-runtime-wry v2.9.1/Check { test: false }/TargetInner { ..: lib_target("tauri_runtime_wry", ["lib"], "C:\\Users\\chris\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\tauri-runtime-wry-2.9.1\\src\\lib.rs", Edition2021) }
+   0.855753200s  INFO prepare_target{force=false package_id=tauri-runtime-wry v2.9.1 target="tauri_runtime_wry"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\chris\RapidFits\src-tauri\target\debug\.fingerprint\tauri-runtime-wry-b1ed51741865ee0d\lib-tauri_runtime_wry`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: <unknown>
+  17: <unknown>
+  18: git_midx_writer_dump
+  19: git_filter_source_repo
+  20: git_midx_writer_dump
+  21: BaseThreadInitThunk
+  22: RtlUserThreadStart
+   0.860862700s  INFO prepare_target{force=false package_id=tao v0.34.5 target="tao"}: cargo::core::compiler::fingerprint: fingerprint error for tao v0.34.5/Check { test: false }/TargetInner { ..: lib_target("tao", ["lib"], "C:\\Users\\chris\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\tao-0.34.5\\src\\lib.rs", Edition2021) }
+   0.860911200s  INFO prepare_target{force=false package_id=tao v0.34.5 target="tao"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\chris\RapidFits\src-tauri\target\debug\.fingerprint\tao-25d65bcb3514ac06\lib-tao`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: <unknown>
+  18: <unknown>
+  19: git_midx_writer_dump
+  20: git_filter_source_repo
+  21: git_midx_writer_dump
+  22: BaseThreadInitThunk
+  23: RtlUserThreadStart
+   0.867331400s  INFO prepare_target{force=false package_id=tauri-plugin-opener v2.5.0 target="tauri_plugin_opener"}: cargo::core::compiler::fingerprint: fingerprint error for tauri-plugin-opener v2.5.0/Check { test: false }/TargetInner { ..: lib_target("tauri_plugin_opener", ["lib"], "C:\\Users\\chris\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\tauri-plugin-opener-2.5.0\\src\\lib.rs", Edition2021) }
+   0.867380200s  INFO prepare_target{force=false package_id=tauri-plugin-opener v2.5.0 target="tauri_plugin_opener"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\chris\RapidFits\src-tauri\target\debug\.fingerprint\tauri-plugin-opener-aa420f908ef77023\lib-tauri_plugin_opener`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: <unknown>
+  16: <unknown>
+  17: git_midx_writer_dump
+  18: git_filter_source_repo
+  19: git_midx_writer_dump
+  20: BaseThreadInitThunk
+  21: RtlUserThreadStart
+   0.870579200s  INFO prepare_target{force=false package_id=wgpu v27.0.1 target="wgpu"}: cargo::core::compiler::fingerprint: fingerprint error for wgpu v27.0.1/Check { test: false }/TargetInner { ..: lib_target("wgpu", ["lib"], "C:\\Users\\chris\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\wgpu-27.0.1\\src\\lib.rs", Edition2021) }
+   0.870640300s  INFO prepare_target{force=false package_id=wgpu v27.0.1 target="wgpu"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\chris\RapidFits\src-tauri\target\debug\.fingerprint\wgpu-d4650a71426814df\lib-wgpu`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: <unknown>
+  16: <unknown>
+  17: git_midx_writer_dump
+  18: git_filter_source_repo
+  19: git_midx_writer_dump
+  20: BaseThreadInitThunk
+  21: RtlUserThreadStart
+   0.872320200s  INFO prepare_target{force=false package_id=arrayvec v0.7.6 target="arrayvec"}: cargo::core::compiler::fingerprint: fingerprint error for arrayvec v0.7.6/Check { test: false }/TargetInner { ..: lib_target("arrayvec", ["lib"], "C:\\Users\\chris\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\arrayvec-0.7.6\\src\\lib.rs", Edition2018) }
+   0.872351700s  INFO prepare_target{force=false package_id=arrayvec v0.7.6 target="arrayvec"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\chris\RapidFits\src-tauri\target\debug\.fingerprint\arrayvec-bd60b7efa38280e3\lib-arrayvec`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: <unknown>
+  17: <unknown>
+  18: git_midx_writer_dump
+  19: git_filter_source_repo
+  20: git_midx_writer_dump
+  21: BaseThreadInitThunk
+  22: RtlUserThreadStart
+   0.874017100s  INFO prepare_target{force=false package_id=hashbrown v0.16.0 target="hashbrown"}: cargo::core::compiler::fingerprint: fingerprint error for hashbrown v0.16.0/Check { test: false }/TargetInner { ..: lib_target("hashbrown", ["lib"], "C:\\Users\\chris\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\hashbrown-0.16.0\\src\\lib.rs", Edition2021) }
+   0.874047900s  INFO prepare_target{force=false package_id=hashbrown v0.16.0 target="hashbrown"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\chris\RapidFits\src-tauri\target\debug\.fingerprint\hashbrown-822fdae3095a5b2d\lib-hashbrown`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: <unknown>
+  17: <unknown>
+  18: git_midx_writer_dump
+  19: git_filter_source_repo
+  20: git_midx_writer_dump
+  21: BaseThreadInitThunk
+  22: RtlUserThreadStart
+   0.874952800s  INFO prepare_target{force=false package_id=foldhash v0.2.0 target="foldhash"}: cargo::core::compiler::fingerprint: fingerprint error for foldhash v0.2.0/Check { test: false }/TargetInner { benched: false, ..: lib_target("foldhash", ["lib"], "C:\\Users\\chris\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\foldhash-0.2.0\\src\\lib.rs", Edition2021) }
+   0.874977700s  INFO prepare_target{force=false package_id=foldhash v0.2.0 target="foldhash"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\chris\RapidFits\src-tauri\target\debug\.fingerprint\foldhash-fddfd127daf55eb6\lib-foldhash`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: <unknown>
+  18: <unknown>
+  19: git_midx_writer_dump
+  20: git_filter_source_repo
+  21: git_midx_writer_dump
+  22: BaseThreadInitThunk
+  23: RtlUserThreadStart
+   0.875750200s  INFO prepare_target{force=false package_id=profiling v1.0.17 target="profiling"}: cargo::core::compiler::fingerprint: fingerprint error for profiling v1.0.17/Check { test: false }/TargetInner { ..: lib_target("profiling", ["lib"], "C:\\Users\\chris\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\profiling-1.0.17\\src\\lib.rs", Edition2018) }
+   0.875769300s  INFO prepare_target{force=false package_id=profiling v1.0.17 target="profiling"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\chris\RapidFits\src-tauri\target\debug\.fingerprint\profiling-514623638ceb7cf0\lib-profiling`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: <unknown>
+  17: <unknown>
+  18: git_midx_writer_dump
+  19: git_filter_source_repo
+  20: git_midx_writer_dump
+  21: BaseThreadInitThunk
+  22: RtlUserThreadStart
+   0.876463200s  INFO prepare_target{force=false package_id=static_assertions v1.1.0 target="static_assertions"}: cargo::core::compiler::fingerprint: fingerprint error for static_assertions v1.1.0/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("static_assertions", ["lib"], "C:\\Users\\chris\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\static_assertions-1.1.0\\src\\lib.rs", Edition2015) }
+   0.876495100s  INFO prepare_target{force=false package_id=static_assertions v1.1.0 target="static_assertions"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\chris\RapidFits\src-tauri\target\debug\.fingerprint\static_assertions-26b437a9bbc6e300\lib-static_assertions`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: <unknown>
+  17: <unknown>
+  18: git_midx_writer_dump
+  19: git_filter_source_repo
+  20: git_midx_writer_dump
+  21: BaseThreadInitThunk
+  22: RtlUserThreadStart
+   0.878434600s  INFO prepare_target{force=false package_id=wgpu-core v27.0.3 target="wgpu_core"}: cargo::core::compiler::fingerprint: fingerprint error for wgpu-core v27.0.3/Check { test: false }/TargetInner { ..: lib_target("wgpu_core", ["lib"], "C:\\Users\\chris\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\wgpu-core-27.0.3\\src\\lib.rs", Edition2021) }
+   0.878458700s  INFO prepare_target{force=false package_id=wgpu-core v27.0.3 target="wgpu_core"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\chris\RapidFits\src-tauri\target\debug\.fingerprint\wgpu-core-079874c7df369d16\lib-wgpu_core`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: <unknown>
+  17: <unknown>
+  18: git_midx_writer_dump
+  19: git_filter_source_repo
+  20: git_midx_writer_dump
+  21: BaseThreadInitThunk
+  22: RtlUserThreadStart
+   0.879754800s  INFO prepare_target{force=false package_id=bit-set v0.8.0 target="bit_set"}: cargo::core::compiler::fingerprint: fingerprint error for bit-set v0.8.0/Check { test: false }/TargetInner { ..: lib_target("bit_set", ["lib"], "C:\\Users\\chris\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\bit-set-0.8.0\\src\\lib.rs", Edition2015) }
+   0.879777200s  INFO prepare_target{force=false package_id=bit-set v0.8.0 target="bit_set"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\chris\RapidFits\src-tauri\target\debug\.fingerprint\bit-set-a5616bb69fd545c8\lib-bit_set`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: <unknown>
+  18: <unknown>
+  19: git_midx_writer_dump
+  20: git_filter_source_repo
+  21: git_midx_writer_dump
+  22: BaseThreadInitThunk
+  23: RtlUserThreadStart
+   0.880501400s  INFO prepare_target{force=false package_id=bit-vec v0.8.0 target="bit_vec"}: cargo::core::compiler::fingerprint: fingerprint error for bit-vec v0.8.0/Check { test: false }/TargetInner { ..: lib_target("bit_vec", ["lib"], "C:\\Users\\chris\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\bit-vec-0.8.0\\src\\lib.rs", Edition2015) }
+   0.880520600s  INFO prepare_target{force=false package_id=bit-vec v0.8.0 target="bit_vec"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\chris\RapidFits\src-tauri\target\debug\.fingerprint\bit-vec-9cf9fffd874dd3e2\lib-bit_vec`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: <unknown>
+  19: <unknown>
+  20: git_midx_writer_dump
+  21: git_filter_source_repo
+  22: git_midx_writer_dump
+  23: BaseThreadInitThunk
+  24: RtlUserThreadStart
+   0.881296800s  INFO prepare_target{force=false package_id=indexmap v2.12.0 target="indexmap"}: cargo::core::compiler::fingerprint: fingerprint error for indexmap v2.12.0/Check { test: false }/TargetInner { benched: false, ..: lib_target("indexmap", ["lib"], "C:\\Users\\chris\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\indexmap-2.12.0\\src\\lib.rs", Edition2021) }
+   0.881320600s  INFO prepare_target{force=false package_id=indexmap v2.12.0 target="indexmap"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\chris\RapidFits\src-tauri\target\debug\.fingerprint\indexmap-1ce047467163ca7b\lib-indexmap`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: <unknown>
+  18: <unknown>
+  19: git_midx_writer_dump
+  20: git_filter_source_repo
+  21: git_midx_writer_dump
+  22: BaseThreadInitThunk
+  23: RtlUserThreadStart
+   0.882143000s  INFO prepare_target{force=false package_id=equivalent v1.0.2 target="equivalent"}: cargo::core::compiler::fingerprint: fingerprint error for equivalent v1.0.2/Check { test: false }/TargetInner { ..: lib_target("equivalent", ["lib"], "C:\\Users\\chris\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\equivalent-1.0.2\\src\\lib.rs", Edition2015) }
+   0.882167700s  INFO prepare_target{force=false package_id=equivalent v1.0.2 target="equivalent"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\chris\RapidFits\src-tauri\target\debug\.fingerprint\equivalent-a82a1228783d4ddb\lib-equivalent`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: <unknown>
+  19: <unknown>
+  20: git_midx_writer_dump
+  21: git_filter_source_repo
+  22: git_midx_writer_dump
+  23: BaseThreadInitThunk
+  24: RtlUserThreadStart
+   0.883159100s  INFO prepare_target{force=false package_id=naga v27.0.3 target="naga"}: cargo::core::compiler::fingerprint: fingerprint error for naga v27.0.3/Check { test: false }/TargetInner { ..: lib_target("naga", ["lib"], "C:\\Users\\chris\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\naga-27.0.3\\src\\lib.rs", Edition2021) }
+   0.883206000s  INFO prepare_target{force=false package_id=naga v27.0.3 target="naga"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\chris\RapidFits\src-tauri\target\debug\.fingerprint\naga-e7bced1b2ec2a013\lib-naga`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: <unknown>
+  18: <unknown>
+  19: git_midx_writer_dump
+  20: git_filter_source_repo
+  21: git_midx_writer_dump
+  22: BaseThreadInitThunk
+  23: RtlUserThreadStart
+   0.884552600s  INFO prepare_target{force=false package_id=codespan-reporting v0.12.0 target="codespan_reporting"}: cargo::core::compiler::fingerprint: fingerprint error for codespan-reporting v0.12.0/Check { test: false }/TargetInner { ..: lib_target("codespan_reporting", ["lib"], "C:\\Users\\chris\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\codespan-reporting-0.12.0\\src\\lib.rs", Edition2021) }
+   0.884587000s  INFO prepare_target{force=false package_id=codespan-reporting v0.12.0 target="codespan_reporting"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\chris\RapidFits\src-tauri\target\debug\.fingerprint\codespan-reporting-eda64da0cafbfbcd\lib-codespan_reporting`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: <unknown>
+  19: <unknown>
+  20: git_midx_writer_dump
+  21: git_filter_source_repo
+  22: git_midx_writer_dump
+  23: BaseThreadInitThunk
+  24: RtlUserThreadStart
+   0.885614800s  INFO prepare_target{force=false package_id=unicode-width v0.2.2 target="unicode_width"}: cargo::core::compiler::fingerprint: fingerprint error for unicode-width v0.2.2/Check { test: false }/TargetInner { ..: lib_target("unicode_width", ["lib"], "C:\\Users\\chris\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\unicode-width-0.2.2\\src\\lib.rs", Edition2021) }
+   0.885648200s  INFO prepare_target{force=false package_id=unicode-width v0.2.2 target="unicode_width"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\chris\RapidFits\src-tauri\target\debug\.fingerprint\unicode-width-315308026099e8c0\lib-unicode_width`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_path
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: git_filter_source_repo
+  19: <unknown>
+  20: <unknown>
+  21: git_midx_writer_dump
+  22: git_filter_source_repo
+  23: git_midx_writer_dump
+  24: BaseThreadInitThunk
+  25: RtlUserThreadStart
+   0.886526500s  INFO prepare_target{force=false package_id=half v2.7.1 target="half"}: cargo::core::compiler::fingerprint: fingerprint error for half v2.7.1/Check { test: false }/TargetInner { ..: lib_target("half", ["lib"], "C:\\Users\\chris\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\half-2.7.1\\src\\lib.rs", Edition2021) }
+   0.886551300s  INFO prepare_target{force=false package_id=half v2.7.1 target="half"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\chris\RapidFits\src-tauri\target\debug\.fingerprint\half-8c3b0528d5374dec\lib-half`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: <unknown>
+  19: <unknown>
+  20: git_midx_writer_dump
+  21: git_filter_source_repo
+  22: git_midx_writer_dump
+  23: BaseThreadInitThunk
+  24: RtlUserThreadStart
+   0.887601500s  INFO prepare_target{force=false package_id=zerocopy v0.8.27 target="zerocopy"}: cargo::core::compiler::fingerprint: fingerprint error for zerocopy v0.8.27/Check { test: false }/TargetInner { ..: lib_target("zerocopy", ["lib"], "C:\\Users\\chris\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\zerocopy-0.8.27\\src\\lib.rs", Edition2021) }
+   0.887651900s  INFO prepare_target{force=false package_id=zerocopy v0.8.27 target="zerocopy"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\chris\RapidFits\src-tauri\target\debug\.fingerprint\zerocopy-8f70a1312f45b15a\lib-zerocopy`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_path
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: git_filter_source_repo
+  19: <unknown>
+  20: <unknown>
+  21: git_midx_writer_dump
+  22: git_filter_source_repo
+  23: git_midx_writer_dump
+  24: BaseThreadInitThunk
+  25: RtlUserThreadStart
+   0.890227200s  INFO prepare_target{force=false package_id=hexf-parse v0.2.1 target="hexf_parse"}: cargo::core::compiler::fingerprint: fingerprint error for hexf-parse v0.2.1/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("hexf_parse", ["lib"], "C:\\Users\\chris\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\hexf-parse-0.2.1\\src\\lib.rs", Edition2018) }
+   0.890264500s  INFO prepare_target{force=false package_id=hexf-parse v0.2.1 target="hexf_parse"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\chris\RapidFits\src-tauri\target\debug\.fingerprint\hexf-parse-b4c5a81e8ddc13de\lib-hexf_parse`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: <unknown>
+  19: <unknown>
+  20: git_midx_writer_dump
+  21: git_filter_source_repo
+  22: git_midx_writer_dump
+  23: BaseThreadInitThunk
+  24: RtlUserThreadStart
+   0.892433100s  INFO prepare_target{force=false package_id=rustc-hash v1.1.0 target="rustc_hash"}: cargo::core::compiler::fingerprint: fingerprint error for rustc-hash v1.1.0/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("rustc_hash", ["lib"], "C:\\Users\\chris\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\rustc-hash-1.1.0\\src\\lib.rs", Edition2015) }
+   0.892484700s  INFO prepare_target{force=false package_id=rustc-hash v1.1.0 target="rustc_hash"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\chris\RapidFits\src-tauri\target\debug\.fingerprint\rustc-hash-ddd33457f0d81e76\lib-rustc_hash`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: <unknown>
+  19: <unknown>
+  20: git_midx_writer_dump
+  21: git_filter_source_repo
+  22: git_midx_writer_dump
+  23: BaseThreadInitThunk
+  24: RtlUserThreadStart
+   0.893293600s  INFO prepare_target{force=false package_id=spirv v0.3.0+sdk-1.3.268.0 target="spirv"}: cargo::core::compiler::fingerprint: fingerprint error for spirv v0.3.0+sdk-1.3.268.0/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("spirv", ["lib"], "C:\\Users\\chris\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\spirv-0.3.0+sdk-1.3.268.0\\lib.rs", Edition2018) }
+   0.893316300s  INFO prepare_target{force=false package_id=spirv v0.3.0+sdk-1.3.268.0 target="spirv"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\chris\RapidFits\src-tauri\target\debug\.fingerprint\spirv-15ce0e22fb7901f6\lib-spirv`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: <unknown>
+  19: <unknown>
+  20: git_midx_writer_dump
+  21: git_filter_source_repo
+  22: git_midx_writer_dump
+  23: BaseThreadInitThunk
+  24: RtlUserThreadStart
+   0.894125400s  INFO prepare_target{force=false package_id=unicode-ident v1.0.20 target="unicode_ident"}: cargo::core::compiler::fingerprint: fingerprint error for unicode-ident v1.0.20/Check { test: false }/TargetInner { ..: lib_target("unicode_ident", ["lib"], "C:\\Users\\chris\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\unicode-ident-1.0.20\\src\\lib.rs", Edition2018) }
+   0.894145100s  INFO prepare_target{force=false package_id=unicode-ident v1.0.20 target="unicode_ident"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\chris\RapidFits\src-tauri\target\debug\.fingerprint\unicode-ident-5f7830dae96efc98\lib-unicode_ident`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: <unknown>
+  19: <unknown>
+  20: git_midx_writer_dump
+  21: git_filter_source_repo
+  22: git_midx_writer_dump
+  23: BaseThreadInitThunk
+  24: RtlUserThreadStart
+   0.896241400s  INFO prepare_target{force=false package_id=wgpu-core-deps-windows-linux-android v27.0.0 target="wgpu_core_deps_windows_linux_android"}: cargo::core::compiler::fingerprint: fingerprint error for wgpu-core-deps-windows-linux-android v27.0.0/Check { test: false }/TargetInner { ..: lib_target("wgpu_core_deps_windows_linux_android", ["lib"], "C:\\Users\\chris\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\wgpu-core-deps-windows-linux-android-27.0.0\\src\\lib.rs", Edition2021) }
+   0.896290100s  INFO prepare_target{force=false package_id=wgpu-core-deps-windows-linux-android v27.0.0 target="wgpu_core_deps_windows_linux_android"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\chris\RapidFits\src-tauri\target\debug\.fingerprint\wgpu-core-deps-windows-linux-android-f1843c4740deaa8c\lib-wgpu_core_deps_windows_linux_android`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: <unknown>
+  18: <unknown>
+  19: git_midx_writer_dump
+  20: git_filter_source_repo
+  21: git_midx_writer_dump
+  22: BaseThreadInitThunk
+  23: RtlUserThreadStart
+   0.897533200s  INFO prepare_target{force=false package_id=wgpu-hal v27.0.3 target="wgpu_hal"}: cargo::core::compiler::fingerprint: fingerprint error for wgpu-hal v27.0.3/Check { test: false }/TargetInner { ..: lib_target("wgpu_hal", ["lib"], "C:\\Users\\chris\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\wgpu-hal-27.0.3\\src\\lib.rs", Edition2021) }
+   0.897562900s  INFO prepare_target{force=false package_id=wgpu-hal v27.0.3 target="wgpu_hal"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\chris\RapidFits\src-tauri\target\debug\.fingerprint\wgpu-hal-afeb7a09c21565ad\lib-wgpu_hal`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: <unknown>
+  19: <unknown>
+  20: git_midx_writer_dump
+  21: git_filter_source_repo
+  22: git_midx_writer_dump
+  23: BaseThreadInitThunk
+  24: RtlUserThreadStart
+   0.898767000s  INFO prepare_target{force=false package_id=ash v0.38.0+1.3.281 target="ash"}: cargo::core::compiler::fingerprint: fingerprint error for ash v0.38.0+1.3.281/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("ash", ["lib"], "C:\\Users\\chris\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\ash-0.38.0+1.3.281\\src\\lib.rs", Edition2021) }
+   0.898797500s  INFO prepare_target{force=false package_id=ash v0.38.0+1.3.281 target="ash"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\chris\RapidFits\src-tauri\target\debug\.fingerprint\ash-4cba644ddf03b6cc\lib-ash`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_path
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: git_filter_source_repo
+  19: <unknown>
+  20: <unknown>
+  21: git_midx_writer_dump
+  22: git_filter_source_repo
+  23: git_midx_writer_dump
+  24: BaseThreadInitThunk
+  25: RtlUserThreadStart
+   0.901037300s  INFO prepare_target{force=false package_id=libloading v0.8.9 target="libloading"}: cargo::core::compiler::fingerprint: fingerprint error for libloading v0.8.9/Check { test: false }/TargetInner { ..: lib_target("libloading", ["lib"], "C:\\Users\\chris\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\libloading-0.8.9\\src\\lib.rs", Edition2015) }
+   0.901074500s  INFO prepare_target{force=false package_id=libloading v0.8.9 target="libloading"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\chris\RapidFits\src-tauri\target\debug\.fingerprint\libloading-0963c75dd85ba733\lib-libloading`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_path
+  14: git_filter_source_path
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: git_filter_source_repo
+  19: git_filter_source_repo
+  20: <unknown>
+  21: <unknown>
+  22: git_midx_writer_dump
+  23: git_filter_source_repo
+  24: git_midx_writer_dump
+  25: BaseThreadInitThunk
+  26: RtlUserThreadStart
+   0.902033500s  INFO prepare_target{force=false package_id=glow v0.16.0 target="glow"}: cargo::core::compiler::fingerprint: fingerprint error for glow v0.16.0/Check { test: false }/TargetInner { ..: lib_target("glow", ["lib"], "C:\\Users\\chris\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\glow-0.16.0\\src\\lib.rs", Edition2021) }
+   0.902066700s  INFO prepare_target{force=false package_id=glow v0.16.0 target="glow"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\chris\RapidFits\src-tauri\target\debug\.fingerprint\glow-6ea06be1d49406a9\lib-glow`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_path
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: git_filter_source_repo
+  19: <unknown>
+  20: <unknown>
+  21: git_midx_writer_dump
+  22: git_filter_source_repo
+  23: git_midx_writer_dump
+  24: BaseThreadInitThunk
+  25: RtlUserThreadStart
+   0.902924800s  INFO prepare_target{force=false package_id=glutin_wgl_sys v0.6.1 target="glutin_wgl_sys"}: cargo::core::compiler::fingerprint: fingerprint error for glutin_wgl_sys v0.6.1/Check { test: false }/TargetInner { ..: lib_target("glutin_wgl_sys", ["lib"], "C:\\Users\\chris\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\glutin_wgl_sys-0.6.1\\src\\lib.rs", Edition2021) }
+   0.902950000s  INFO prepare_target{force=false package_id=glutin_wgl_sys v0.6.1 target="glutin_wgl_sys"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\chris\RapidFits\src-tauri\target\debug\.fingerprint\glutin_wgl_sys-f30385a691a1fe5e\lib-glutin_wgl_sys`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_path
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: git_filter_source_repo
+  19: <unknown>
+  20: <unknown>
+  21: git_midx_writer_dump
+  22: git_filter_source_repo
+  23: git_midx_writer_dump
+  24: BaseThreadInitThunk
+  25: RtlUserThreadStart
+   0.907642100s  INFO prepare_target{force=false package_id=gpu-alloc v0.6.0 target="gpu_alloc"}: cargo::core::compiler::fingerprint: fingerprint error for gpu-alloc v0.6.0/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("gpu_alloc", ["lib"], "C:\\Users\\chris\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\gpu-alloc-0.6.0\\src\\lib.rs", Edition2018) }
+   0.907686800s  INFO prepare_target{force=false package_id=gpu-alloc v0.6.0 target="gpu_alloc"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\chris\RapidFits\src-tauri\target\debug\.fingerprint\gpu-alloc-ac82d2678810624d\lib-gpu_alloc`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_path
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: git_filter_source_repo
+  19: <unknown>
+  20: <unknown>
+  21: git_midx_writer_dump
+  22: git_filter_source_repo
+  23: git_midx_writer_dump
+  24: BaseThreadInitThunk
+  25: RtlUserThreadStart
+   0.908430300s  INFO prepare_target{force=false package_id=gpu-alloc-types v0.3.0 target="gpu_alloc_types"}: cargo::core::compiler::fingerprint: fingerprint error for gpu-alloc-types v0.3.0/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("gpu_alloc_types", ["lib"], "C:\\Users\\chris\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\gpu-alloc-types-0.3.0\\src\\lib.rs", Edition2018) }
+   0.908453500s  INFO prepare_target{force=false package_id=gpu-alloc-types v0.3.0 target="gpu_alloc_types"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\chris\RapidFits\src-tauri\target\debug\.fingerprint\gpu-alloc-types-7bb077fa03a1a48d\lib-gpu_alloc_types`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_path
+  14: git_filter_source_path
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: git_filter_source_repo
+  19: git_filter_source_repo
+  20: <unknown>
+  21: <unknown>
+  22: git_midx_writer_dump
+  23: git_filter_source_repo
+  24: git_midx_writer_dump
+  25: BaseThreadInitThunk
+  26: RtlUserThreadStart
+   0.909390900s  INFO prepare_target{force=false package_id=gpu-allocator v0.27.0 target="gpu_allocator"}: cargo::core::compiler::fingerprint: fingerprint error for gpu-allocator v0.27.0/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("gpu_allocator", ["lib"], "C:\\Users\\chris\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\gpu-allocator-0.27.0\\src\\lib.rs", Edition2021) }
+   0.909415400s  INFO prepare_target{force=false package_id=gpu-allocator v0.27.0 target="gpu_allocator"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\chris\RapidFits\src-tauri\target\debug\.fingerprint\gpu-allocator-ca52a19b0613caee\lib-gpu_allocator`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_path
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: git_filter_source_repo
+  19: <unknown>
+  20: <unknown>
+  21: git_midx_writer_dump
+  22: git_filter_source_repo
+  23: git_midx_writer_dump
+  24: BaseThreadInitThunk
+  25: RtlUserThreadStart
+   0.910275800s  INFO prepare_target{force=false package_id=presser v0.3.1 target="presser"}: cargo::core::compiler::fingerprint: fingerprint error for presser v0.3.1/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("presser", ["lib"], "C:\\Users\\chris\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\presser-0.3.1\\src\\lib.rs", Edition2021) }
+   0.910295900s  INFO prepare_target{force=false package_id=presser v0.3.1 target="presser"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\chris\RapidFits\src-tauri\target\debug\.fingerprint\presser-8459dff74d63525b\lib-presser`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_path
+  14: git_filter_source_path
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: git_filter_source_repo
+  19: git_filter_source_repo
+  20: <unknown>
+  21: <unknown>
+  22: git_midx_writer_dump
+  23: git_filter_source_repo
+  24: git_midx_writer_dump
+  25: BaseThreadInitThunk
+  26: RtlUserThreadStart
+   0.911028100s  INFO prepare_target{force=false package_id=windows v0.58.0 target="windows"}: cargo::core::compiler::fingerprint: fingerprint error for windows v0.58.0/Check { test: false }/TargetInner { tested: false, doctest: false, ..: lib_target("windows", ["lib"], "C:\\Users\\chris\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\windows-0.58.0\\src\\lib.rs", Edition2021) }
+   0.911048400s  INFO prepare_target{force=false package_id=windows v0.58.0 target="windows"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\chris\RapidFits\src-tauri\target\debug\.fingerprint\windows-882d01c55a2b32a3\lib-windows`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_path
+  14: git_filter_source_path
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: git_filter_source_repo
+  19: git_filter_source_repo
+  20: <unknown>
+  21: <unknown>
+  22: git_midx_writer_dump
+  23: git_filter_source_repo
+  24: git_midx_writer_dump
+  25: BaseThreadInitThunk
+  26: RtlUserThreadStart
+   0.911986800s  INFO prepare_target{force=false package_id=windows-core v0.58.0 target="windows_core"}: cargo::core::compiler::fingerprint: fingerprint error for windows-core v0.58.0/Check { test: false }/TargetInner { ..: lib_target("windows_core", ["lib"], "C:\\Users\\chris\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\windows-core-0.58.0\\src\\lib.rs", Edition2021) }
+   0.912010000s  INFO prepare_target{force=false package_id=windows-core v0.58.0 target="windows_core"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\chris\RapidFits\src-tauri\target\debug\.fingerprint\windows-core-fc910b853e9f7e87\lib-windows_core`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_path
+  14: git_filter_source_path
+  15: git_filter_source_path
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: git_filter_source_repo
+  19: git_filter_source_repo
+  20: git_filter_source_repo
+  21: <unknown>
+  22: <unknown>
+  23: git_midx_writer_dump
+  24: git_filter_source_repo
+  25: git_midx_writer_dump
+  26: BaseThreadInitThunk
+  27: RtlUserThreadStart
+   0.913470200s  INFO prepare_target{force=false package_id=windows-result v0.2.0 target="windows_result"}: cargo::core::compiler::fingerprint: fingerprint error for windows-result v0.2.0/Check { test: false }/TargetInner { ..: lib_target("windows_result", ["lib"], "C:\\Users\\chris\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\windows-result-0.2.0\\src\\lib.rs", Edition2021) }
+   0.913496900s  INFO prepare_target{force=false package_id=windows-result v0.2.0 target="windows_result"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\chris\RapidFits\src-tauri\target\debug\.fingerprint\windows-result-7817f2ab22aa8fd3\lib-windows_result`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_path
+  14: git_filter_source_path
+  15: git_filter_source_path
+  16: git_filter_source_path
+  17: git_filter_source_repo
+  18: git_filter_source_repo
+  19: git_filter_source_repo
+  20: git_filter_source_repo
+  21: git_filter_source_repo
+  22: <unknown>
+  23: <unknown>
+  24: git_midx_writer_dump
+  25: git_filter_source_repo
+  26: git_midx_writer_dump
+  27: BaseThreadInitThunk
+  28: RtlUserThreadStart
+   0.914333100s  INFO prepare_target{force=false package_id=windows-strings v0.1.0 target="windows_strings"}: cargo::core::compiler::fingerprint: fingerprint error for windows-strings v0.1.0/Check { test: false }/TargetInner { ..: lib_target("windows_strings", ["lib"], "C:\\Users\\chris\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\windows-strings-0.1.0\\src\\lib.rs", Edition2021) }
+   0.914356200s  INFO prepare_target{force=false package_id=windows-strings v0.1.0 target="windows_strings"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\chris\RapidFits\src-tauri\target\debug\.fingerprint\windows-strings-4227bcf50d7c29de\lib-windows_strings`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_path
+  14: git_filter_source_path
+  15: git_filter_source_path
+  16: git_filter_source_path
+  17: git_filter_source_repo
+  18: git_filter_source_repo
+  19: git_filter_source_repo
+  20: git_filter_source_repo
+  21: git_filter_source_repo
+  22: <unknown>
+  23: <unknown>
+  24: git_midx_writer_dump
+  25: git_filter_source_repo
+  26: git_midx_writer_dump
+  27: BaseThreadInitThunk
+  28: RtlUserThreadStart
+   0.915455800s  INFO prepare_target{force=false package_id=gpu-descriptor v0.3.2 target="gpu_descriptor"}: cargo::core::compiler::fingerprint: fingerprint error for gpu-descriptor v0.3.2/Check { test: false }/TargetInner { ..: lib_target("gpu_descriptor", ["lib"], "C:\\Users\\chris\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\gpu-descriptor-0.3.2\\src\\lib.rs", Edition2018) }
+   0.915496500s  INFO prepare_target{force=false package_id=gpu-descriptor v0.3.2 target="gpu_descriptor"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\chris\RapidFits\src-tauri\target\debug\.fingerprint\gpu-descriptor-29a6947c99f27e20\lib-gpu_descriptor`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_path
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: git_filter_source_repo
+  19: <unknown>
+  20: <unknown>
+  21: git_midx_writer_dump
+  22: git_filter_source_repo
+  23: git_midx_writer_dump
+  24: BaseThreadInitThunk
+  25: RtlUserThreadStart
+   0.916294700s  INFO prepare_target{force=false package_id=gpu-descriptor-types v0.2.0 target="gpu_descriptor_types"}: cargo::core::compiler::fingerprint: fingerprint error for gpu-descriptor-types v0.2.0/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("gpu_descriptor_types", ["lib"], "C:\\Users\\chris\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\gpu-descriptor-types-0.2.0\\src\\lib.rs", Edition2018) }
+   0.916322500s  INFO prepare_target{force=false package_id=gpu-descriptor-types v0.2.0 target="gpu_descriptor_types"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\chris\RapidFits\src-tauri\target\debug\.fingerprint\gpu-descriptor-types-86734b951b74f836\lib-gpu_descriptor_types`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_path
+  14: git_filter_source_path
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: git_filter_source_repo
+  19: git_filter_source_repo
+  20: <unknown>
+  21: <unknown>
+  22: git_midx_writer_dump
+  23: git_filter_source_repo
+  24: git_midx_writer_dump
+  25: BaseThreadInitThunk
+  26: RtlUserThreadStart
+   0.917129900s  INFO prepare_target{force=false package_id=hashbrown v0.15.5 target="hashbrown"}: cargo::core::compiler::fingerprint: fingerprint error for hashbrown v0.15.5/Check { test: false }/TargetInner { ..: lib_target("hashbrown", ["lib"], "C:\\Users\\chris\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\hashbrown-0.15.5\\src\\lib.rs", Edition2021) }
+   0.917152200s  INFO prepare_target{force=false package_id=hashbrown v0.15.5 target="hashbrown"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\chris\RapidFits\src-tauri\target\debug\.fingerprint\hashbrown-14d5b3f80b96f89d\lib-hashbrown`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_path
+  14: git_filter_source_path
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: git_filter_source_repo
+  19: git_filter_source_repo
+  20: <unknown>
+  21: <unknown>
+  22: git_midx_writer_dump
+  23: git_filter_source_repo
+  24: git_midx_writer_dump
+  25: BaseThreadInitThunk
+  26: RtlUserThreadStart
+   0.917866500s  INFO prepare_target{force=false package_id=foldhash v0.1.5 target="foldhash"}: cargo::core::compiler::fingerprint: fingerprint error for foldhash v0.1.5/Check { test: false }/TargetInner { benched: false, ..: lib_target("foldhash", ["lib"], "C:\\Users\\chris\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\foldhash-0.1.5\\src\\lib.rs", Edition2021) }
+   0.917888300s  INFO prepare_target{force=false package_id=foldhash v0.1.5 target="foldhash"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\chris\RapidFits\src-tauri\target\debug\.fingerprint\foldhash-ba1d1cac4270f83d\lib-foldhash`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_path
+  14: git_filter_source_path
+  15: git_filter_source_path
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: git_filter_source_repo
+  19: git_filter_source_repo
+  20: git_filter_source_repo
+  21: <unknown>
+  22: <unknown>
+  23: git_midx_writer_dump
+  24: git_filter_source_repo
+  25: git_midx_writer_dump
+  26: BaseThreadInitThunk
+  27: RtlUserThreadStart
+   0.918630500s  INFO prepare_target{force=false package_id=khronos-egl v6.0.0 target="khronos_egl"}: cargo::core::compiler::fingerprint: fingerprint error for khronos-egl v6.0.0/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("khronos_egl", ["lib"], "C:\\Users\\chris\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\khronos-egl-6.0.0\\src\\lib.rs", Edition2021) }
+   0.918650800s  INFO prepare_target{force=false package_id=khronos-egl v6.0.0 target="khronos_egl"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\chris\RapidFits\src-tauri\target\debug\.fingerprint\khronos-egl-0b6d9ab5f3c208a5\lib-khronos_egl`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_path
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: git_filter_source_repo
+  19: <unknown>
+  20: <unknown>
+  21: git_midx_writer_dump
+  22: git_filter_source_repo
+  23: git_midx_writer_dump
+  24: BaseThreadInitThunk
+  25: RtlUserThreadStart
+   0.920536200s  INFO prepare_target{force=false package_id=ordered-float v5.0.0 target="ordered_float"}: cargo::core::compiler::fingerprint: fingerprint error for ordered-float v5.0.0/Check { test: false }/TargetInner { ..: lib_target("ordered_float", ["lib"], "C:\\Users\\chris\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\ordered-float-5.0.0\\src\\lib.rs", Edition2021) }
+   0.920561800s  INFO prepare_target{force=false package_id=ordered-float v5.0.0 target="ordered_float"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\chris\RapidFits\src-tauri\target\debug\.fingerprint\ordered-float-2236e8b38ce8b92d\lib-ordered_float`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_path
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: git_filter_source_repo
+  19: <unknown>
+  20: <unknown>
+  21: git_midx_writer_dump
+  22: git_filter_source_repo
+  23: git_midx_writer_dump
+  24: BaseThreadInitThunk
+  25: RtlUserThreadStart
+   0.921383200s  INFO prepare_target{force=false package_id=range-alloc v0.1.4 target="range_alloc"}: cargo::core::compiler::fingerprint: fingerprint error for range-alloc v0.1.4/Check { test: false }/TargetInner { ..: lib_target("range_alloc", ["lib"], "C:\\Users\\chris\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\range-alloc-0.1.4\\src\\lib.rs", Edition2018) }
+   0.921405700s  INFO prepare_target{force=false package_id=range-alloc v0.1.4 target="range_alloc"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\chris\RapidFits\src-tauri\target\debug\.fingerprint\range-alloc-4b10b69c9ccc71a2\lib-range_alloc`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_path
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: git_filter_source_repo
+  19: <unknown>
+  20: <unknown>
+  21: git_midx_writer_dump
+  22: git_filter_source_repo
+  23: git_midx_writer_dump
+  24: BaseThreadInitThunk
+  25: RtlUserThreadStart
+   0.922185200s  INFO prepare_target{force=false package_id=renderdoc-sys v1.1.0 target="renderdoc_sys"}: cargo::core::compiler::fingerprint: fingerprint error for renderdoc-sys v1.1.0/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("renderdoc_sys", ["lib"], "C:\\Users\\chris\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\renderdoc-sys-1.1.0\\src\\lib.rs", Edition2015) }
+   0.922208400s  INFO prepare_target{force=false package_id=renderdoc-sys v1.1.0 target="renderdoc_sys"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\chris\RapidFits\src-tauri\target\debug\.fingerprint\renderdoc-sys-fafd8216e097682e\lib-renderdoc_sys`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_path
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_filter_source_repo
+  17: git_filter_source_repo
+  18: git_filter_source_repo
+  19: <unknown>
+  20: <unknown>
+  21: git_midx_writer_dump
+  22: git_filter_source_repo
+  23: git_midx_writer_dump
+  24: BaseThreadInitThunk
+  25: RtlUserThreadStart
+   0.924233500s  INFO prepare_target{force=false package_id=wgpu-types v27.0.1 target="wgpu_types"}: cargo::core::compiler::fingerprint: fingerprint error for wgpu-types v27.0.1/Check { test: false }/TargetInner { ..: lib_target("wgpu_types", ["lib"], "C:\\Users\\chris\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\wgpu-types-27.0.1\\src\\lib.rs", Edition2021) }
+   0.924261200s  INFO prepare_target{force=false package_id=wgpu-types v27.0.1 target="wgpu_types"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\chris\RapidFits\src-tauri\target\debug\.fingerprint\wgpu-types-8d56565442e1c7fb\lib-wgpu_types`
+
+Caused by:
+    The system cannot find the file specified. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_path
+   6: git_filter_source_path
+   7: git_filter_source_path
+   8: git_filter_source_path
+   9: git_filter_source_path
+  10: git_filter_source_path
+  11: git_filter_source_path
+  12: git_filter_source_path
+  13: git_filter_source_path
+  14: git_filter_source_repo
+  15: git_filter_source_repo

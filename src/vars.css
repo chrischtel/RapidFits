@@ -1,0 +1,27 @@
+:root {
+  /* Base colors */
+  --color-text: #ffffff;
+  --color-accent: #fcff64;
+  --color-accent-hover: #c9cc50;
+
+  /* Backgrounds */
+  --color-bg-dark: rgba(20, 20, 20, 0.95);
+  --color-bg-sidebar: rgba(20, 20, 20, 0.9);
+  --color-bg-button: rgba(40, 40, 40, 0.8);
+  --color-bg-button-hover: rgba(60, 60, 60, 0.9);
+  --color-bg-button-active: rgba(30, 30, 30, 0.9);
+  --color-bg-range-track: rgba(255, 255, 255, 0.1);
+
+  /* Borders */
+  --color-border-light: rgba(255, 255, 255, 0.1);
+  --color-border-button: rgba(255, 255, 255, 0.2);
+
+  /* Shadows / effects */
+  --color-shadow-thumb: rgba(0, 0, 0, 0.3);
+  --color-shadow-thumb-hover: rgba(201, 204, 80, 0.5);
+
+  /* Text shades */
+  --color-text-muted: rgba(255, 255, 255, 0.8);
+  --color-text-faint: rgba(255, 255, 255, 0.6);
+  --color-text-stat: rgba(255, 255, 255, 0.7);
+}
